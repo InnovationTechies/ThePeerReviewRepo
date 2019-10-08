@@ -13,28 +13,35 @@ namespace PeerReviewSystem.Models
     {
         [Key]
         public int reviewID { get; set; }
+        
         [Display(Name = "ReviewDate")]
         public DateTime ReviewDate { get; set; }
 
         //Nav Properties
+        [Column("Project_Manager")]
+        [ForeignKey("empID")]
+        public List<Employee> ProjectLead { get; set; }
 
-        [Display(Name = "ProjectLead")]
-        public Employee ProjectLead { get; set; }
+        [Column("Reviewer")]
+        [ForeignKey("empID")]
+        public List<Employee> Reviewer { get; set; }
+         
+        [Column("Project")]
+        [ForeignKey("projectID")]
+        public List<Project> Project { get; set; }
 
-        [Display(Name = "Reviewer")]
-        public Employee Reviewer { get; set; }
 
-        [Display(Name = "Project")]
-        public Project  Project{ get; set; }
+        [Column("Reviewee")]
+        [ForeignKey("empID")]
+        public List<Employee> Reviewee { get; set; }
 
-        [Display(Name = "Reviewee")]
-        public Employee Reviewee { get; set; }
+        [Column("Question")]
+        [ForeignKey("questionID")]
+        public List<Questions> Questions { get; set; }
 
-        [Display(Name = "Questions")]
-        public Questions Questions { get; set; }
-
-        [Display(Name = "Rating")]
-        public Response Rating { get; set; }
+        [Column("Rating")]
+        [ForeignKey("rateID")]
+        public List<Rating> Rating { get; set; }
 
     }
 }

@@ -13,5 +13,10 @@ namespace PeerReviewSystem
         {
             
         }
+
+        protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
 }

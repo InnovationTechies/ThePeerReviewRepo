@@ -17,8 +17,9 @@ namespace PeerReviewSystem.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-
         //Nav Properties
-        public List<Review> Reviews { get; set; }
+        public Review Review { get; set; }
+        //public List<Review> Reviews { get; set; }
+        //public virtual List<Review> Reviews { get; set; }
     }
 }

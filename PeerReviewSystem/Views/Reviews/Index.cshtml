@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PeerReviewSystem.Models.Review>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectLead.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Questions.Question)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating.rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reviewee.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reviewer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReviewDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectLead.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Questions.Question)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating.rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reviewee.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reviewer.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReviewDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.reviewID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.reviewID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.reviewID })
+        </td>
+    </tr>
+}
+
+</table>

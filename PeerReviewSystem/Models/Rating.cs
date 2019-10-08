@@ -7,15 +7,18 @@ using System.Web;
 
 namespace PeerReviewSystem.Models
 {
-    [Table("tblResponse")]
-    public class Response
+    [Table("tblRating")]
+    public class Rating
     {
         //Scalar Properties
         [Key]
-        public int responseID { get; set; }
-        public string Rating { get; set; }
+        public int rateID { get; set; }
+        public string rating { get; set; }
 
         //Nav Properties
-        public List<Review> Reviews { get; set; }
+        public Review Review { get; set; }
+        //public List<Review> Reviews { get; set; }
+        //public Review Review { get; set; }
+
     }
 }

@@ -18,7 +18,10 @@ namespace PeerReviewSystem.Models
         public JobRole Role { get; set; }
 
         //Nav Properties
-        public List<Review> Reviews { get; set; }
+
+        public Review Review { get; set; }
+        //public List<Review> Reviews { get; set; }
+
 
     }
 }
