@@ -14,37 +14,14 @@ namespace PeerReviewSystemV2.Models
             Review review = new Review()
             {
                 ReviewDate = DateTime.Now.Date,
-                Project = new List<Project>()
-                {
-                    new Project()
-                    {
-                        StartDate=DateTime.Now.Date,
-                        EndDate=DateTime.Now.Date.AddMonths(6),
-                        Name="Kazi Bazibantu"
-                    },
-
-                    new Project()
-                    {
-                        StartDate=DateTime.Now.Date,
-                        EndDate=DateTime.Now.AddDays(3),
-                        Name="Unicef VR"
-                    },
-
-                    new Project()
-                    {
-                        StartDate=DateTime.Now.Date,
-                        EndDate=DateTime.Now.AddDays(2),
-                        Name="Sasol VR"
-                    }
-                },
-                ProjectLead =new List<Employee>()
+                ProjectLead = new List<Employee>()
                 {
                     new Employee ()
                     {
                         Name="Zizi",
                         Surname="Nzombane",
                         Role="Cinematographer"
-                        
+
                     },
 
                     new Employee ()
@@ -57,14 +34,37 @@ namespace PeerReviewSystemV2.Models
 
                      new Employee ()
                     {
-                        Name="Ray",
-                        Surname="Finn",
-                        Role="Sound Engineer"
-
-                    }
+                        Name="Edwin",
+                        Surname="Toi",
+                        Role="Animator"
+                     }
                 }
+                //Project = new List<Project>()
+                //{
+                //    new Project()
+                //    {
+                //        StartDate=DateTime.Now.Date,
+                //        EndDate=DateTime.Now.Date.AddMonths(6),
+                //        Name="Kazi Bazibantu"
+                //    },
+
+                //    new Project()
+                //    {
+                //        StartDate=DateTime.Now.Date,
+                //        EndDate=DateTime.Now.AddDays(3),
+                //        Name="Unicef VR"
+                //    },
+
+                //    new Project()
+                //    {
+                //        StartDate=DateTime.Now.Date,
+                //        EndDate=DateTime.Now.AddDays(2),
+                //        Name="Sasol VR"
+                //    }
+                //}
 
             };
+            context.Reviews.Add(review);
 
             base.Seed(context);
         }

@@ -20,9 +20,9 @@ namespace PeerReviewSystemV2.Controllers
         [ForeignKey("empID")]
         public List<Employee> ProjectLead { get; set; }
  
-        [Column("Project")]
-        [ForeignKey("projectID")]
-        public List<Project> Project { get; set; }
+        //[Column("Project")]
+        //[ForeignKey("projectID")]
+        //public List<Project> Project { get; set; }
 
         //[Column("Reviewer")]
         //[ForeignKey("empID")]

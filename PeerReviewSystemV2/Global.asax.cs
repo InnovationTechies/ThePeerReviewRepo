@@ -1,4 +1,5 @@
 ﻿using PeerReviewSystemV2.Controllers;
+using PeerReviewSystemV2.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -20,7 +21,7 @@ namespace PeerReviewSystemV2
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //Updates Database on change
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ReviewDbContext>());
+            Database.SetInitializer(new ReviiewDDContextSeeder());
         }
     }
 }

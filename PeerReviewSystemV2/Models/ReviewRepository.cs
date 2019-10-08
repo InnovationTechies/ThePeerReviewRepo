@@ -24,7 +24,7 @@ namespace PeerReviewSystemV2.Controllers
         {
             Review reviewToUpdate= reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
             reviewToUpdate.ProjectLead = review.ProjectLead;
-            reviewToUpdate.Project = review.Project;
+            //reviewToUpdate.Project = review.Project;
             reviewToUpdate.ReviewDate = review.ReviewDate;
             //reviewToUpdate.Reviewer = review.Reviewer;
             //reviewToUpdate.Reviewee = review.Reviewee;
