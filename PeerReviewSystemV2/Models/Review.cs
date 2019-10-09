@@ -17,6 +17,7 @@ namespace PeerReviewSystemV2.Controllers
 
         //Nav Properties
         //[Column("ProjectLead")]
+        public Employee empID { get; set; }
         [ForeignKey("empID")]
         public List<Employee> ProjectLead { get; set; }
  
