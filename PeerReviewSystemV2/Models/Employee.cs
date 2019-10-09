@@ -17,7 +17,7 @@ namespace PeerReviewSystemV2.Controllers
         public string Role { get; set; }
 
         //Nav Properties
-        public Review Review { get; set; }
+        //public Review Review { get; set; }
         //public List<Review> Reviews { get; set; }
 
 

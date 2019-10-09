@@ -16,7 +16,7 @@ namespace PeerReviewSystemV2.Controllers
         public DateTime ReviewDate { get; set; }
 
         //Nav Properties
-        [Column("Project_Manager")]
+        //[Column("ProjectLead")]
         [ForeignKey("empID")]
         public List<Employee> ProjectLead { get; set; }
  

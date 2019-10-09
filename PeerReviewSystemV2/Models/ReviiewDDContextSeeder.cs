@@ -22,22 +22,23 @@ namespace PeerReviewSystemV2.Models
                         Surname="Nzombane",
                         Role="Cinematographer"
 
-                    },
+                    }
+                    //,
 
-                    new Employee ()
-                    {
-                        Name="Ray",
-                        Surname="Finn",
-                        Role="Sound Engineer"
+                    //new Employee ()
+                    //{
+                    //    Name="Ray",
+                    //    Surname="Finn",
+                    //    Role="Sound Engineer"
 
-                    },
+                    //},
 
-                     new Employee ()
-                    {
-                        Name="Edwin",
-                        Surname="Toi",
-                        Role="Animator"
-                     }
+                    // new Employee ()
+                    //{
+                    //    Name="Edwin",
+                    //    Surname="Toi",
+                    //    Role="Animator"
+                    // }
                 }
                 //Project = new List<Project>()
                 //{
