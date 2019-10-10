@@ -21,7 +21,10 @@ namespace PeerReviewSystemV2
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //Updates Database on change
-            Database.SetInitializer(new ReviiewDDContextSeeder());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ReviewDbContext>());
+            //Database.SetInitializer(new ReviiewDDContextSeeder());
+
+
         }
     }
 }

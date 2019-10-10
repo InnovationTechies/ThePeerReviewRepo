@@ -18,30 +18,35 @@ namespace PeerReviewSystem.Models
         public DateTime ReviewDate { get; set; }
 
         //Nav Properties
+        public string Project_Manager { get; set; }
         [Column("Project_Manager")]
         [ForeignKey("empID")]
-        public List<Employee> ProjectLead { get; set; }
+        public IEnumerable<Employee> ProjectLead { get; set; }
 
+        public string reviewer{ get; set; }
         [Column("Reviewer")]
         [ForeignKey("empID")]
-        public List<Employee> Reviewer { get; set; }
-         
+        public IEnumerable<Employee> Reviewer { get; set; }
+
+        public string project { get; set; }
         [Column("Project")]
         [ForeignKey("projectID")]
-        public List<Project> Project { get; set; }
+        public IEnumerable<Project> Project { get; set; }
 
-
+        public string reviewee { get; set; }
         [Column("Reviewee")]
         [ForeignKey("empID")]
-        public List<Employee> Reviewee { get; set; }
+        public IEnumerable<Employee> Reviewee { get; set; }
 
+        public string question { get; set; }
         [Column("Question")]
         [ForeignKey("questionID")]
-        public List<Questions> Questions { get; set; }
+        public IEnumerable<Questions> Questions { get; set; }
 
+        public string rating { get; set; }
         [Column("Rating")]
         [ForeignKey("rateID")]
-        public List<Rating> Rating { get; set; }
+        public IEnumerable<Rating> Rating { get; set; }
 
     }
 }

@@ -16,7 +16,7 @@ namespace PeerReviewSystemV2.Controllers
         // GET: Reviews
         public ActionResult Index()
         {
-            var reviews = db.Reviews.Include(r => r.ProjectLead);
+            var reviews = db.Reviews.Include(r => r.Lead);
             return View(reviews.ToList());
         }
 

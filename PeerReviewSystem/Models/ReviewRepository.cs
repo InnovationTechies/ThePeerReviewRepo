@@ -23,11 +23,11 @@ namespace PeerReviewSystem.Models
         public void UpdateReview(Review review)
         {
             Review reviewToUpdate= reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
-            reviewToUpdate.ProjectLead = review.ProjectLead;
-            reviewToUpdate.Project = review.Project;
+            reviewToUpdate.Project_Manager = review.ProjectLead.ToString();
+            reviewToUpdate.project = review.Project.ToString();
             reviewToUpdate.ReviewDate = review.ReviewDate;
-            reviewToUpdate.Reviewer = review.Reviewer;
-            reviewToUpdate.Reviewee = review.Reviewee;
+            reviewToUpdate.reviewer= review.Reviewer.ToString();
+            reviewToUpdate.reviewee = review.Reviewee.ToString();
             reviewToUpdate.Questions = review.Questions;
             reviewToUpdate.Rating = review.Rating;
 
@@ -52,6 +52,19 @@ namespace PeerReviewSystem.Models
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Employees.ToList();
         }
+        /// <summary>
+        /// Get the employee question by name
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
+        public List<Questions> GetQuestionsByEmployee(Review review)
+        {
+
+            
+            ReviewDbContext reviewDbContext = new ReviewDbContext();
+            return reviewDbContext.Questions.ToList();
+        }
+
         public  List<Questions> GetQuestions()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();

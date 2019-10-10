@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
 
 namespace PeerReviewSystemV2.Controllers
 {
@@ -17,9 +14,8 @@ namespace PeerReviewSystemV2.Controllers
 
         //Nav Properties
         //[Column("ProjectLead")]
-        public Employee empID { get; set; }
         [ForeignKey("empID")]
-        public List<Employee> ProjectLead { get; set; }
+        public List<Employee> Lead { get; set; }
  
         //[Column("Project")]
         //[ForeignKey("projectID")]

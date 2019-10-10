@@ -14,15 +14,15 @@ namespace PeerReviewSystemV2.Models
             Review review = new Review()
             {
                 ReviewDate = DateTime.Now.Date,
-                ProjectLead = new List<Employee>()
-                {
-                    new Employee ()
-                    {
-                        Name="Zizi",
-                        Surname="Nzombane",
-                        Role="Cinematographer"
+                //ProjectLead = new List<Employee>()
+                //{
+                //    new Employee ()
+                //    {
+                //        Name="Zizi",
+                //        Surname="Nzombane",
+                //        Role="Cinematographer"
 
-                    }
+                //    }
                     //,
 
                     //new Employee ()
@@ -39,7 +39,7 @@ namespace PeerReviewSystemV2.Models
                     //    Surname="Toi",
                     //    Role="Animator"
                     // }
-                }
+               // }
                 //Project = new List<Project>()
                 //{
                 //    new Project()

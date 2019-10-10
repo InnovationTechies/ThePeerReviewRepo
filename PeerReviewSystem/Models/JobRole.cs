@@ -16,7 +16,7 @@ namespace PeerReviewSystem.Models
         public string Role { get; set; }
 
         //Nav Properties
-        public List<Employee> Employees { get; set; }
+        //public List<Employee> Employees { get; set; }
         
 
     }

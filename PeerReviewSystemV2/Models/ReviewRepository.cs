@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace PeerReviewSystemV2.Controllers
 {
@@ -23,9 +20,9 @@ namespace PeerReviewSystemV2.Controllers
         public void UpdateReview(Review review)
         {
             Review reviewToUpdate= reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
-            reviewToUpdate.ProjectLead = review.ProjectLead;
-            //reviewToUpdate.Project = review.Project;
             reviewToUpdate.ReviewDate = review.ReviewDate;
+            reviewToUpdate.Lead = review.Lead;
+            //reviewToUpdate.Project = review.Project;
             //reviewToUpdate.Reviewer = review.Reviewer;
             //reviewToUpdate.Reviewee = review.Reviewee;
             //reviewToUpdate.Questions = review.Questions;
@@ -45,7 +42,7 @@ namespace PeerReviewSystemV2.Controllers
         public List<Review> GetReviews()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Reviews.ToList();
+            return reviewDbContext.Reviews.Include("Employees").ToList();
         }
         public  List<Employee> GetEmployees()
         {
