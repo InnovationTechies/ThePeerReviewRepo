@@ -11,34 +11,49 @@
         <div class="form-group">
 
             <br />
+
+            <asp:Label ID="lblProjectLead" runat="server" Text="Project Lead"></asp:Label>
+            <asp:DropDownList ID="drpProjectLead" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control"></asp:DropDownList>
+
+            <br />
+
+            <asp:Label ID="lblReviewer" runat="server" Text="Reviewer"></asp:Label>
+            <asp:DropDownList ID="dropReviewer" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control"></asp:DropDownList>
+
+        </div>
+
+        <br />
+        <asp:Label ID="lblProject" runat="server" Text="Project"></asp:Label>
+        <asp:DropDownList ID="drpProject" runat="server" DataSourceID="objectProject" DataTextField="Name" DataValueField="projectID" CssClass="form-control"></asp:DropDownList>
+
+
+        <br />
+
+        <asp:Label ID="lblReviewee" runat="server" Text="Reviewee"></asp:Label>
+        <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="Role" CssClass="form-control" OnSelectedIndexChanged="drpReviewee_SelectedIndexChanged"></asp:DropDownList>
+
+        <br />
+
+        <br />
+
+        <div class="table-responsive">
+            <asp:GridView ID="grdViewQuestions" runat="server" class="table-responsive" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            </asp:GridView>
+            <div />
             
-                <asp:Label ID="lblProjectLead" runat="server" Text="Project Lead"></asp:Label>
-                <asp:DropDownList ID="drpProjectLead" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control"></asp:DropDownList>
-
             <br />
-
-                <asp:Label ID="lblReviewer" runat="server" Text="Reviewer" ></asp:Label>
-                <asp:DropDownList ID="dropReviewer" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control"></asp:DropDownList>
-
-            </div>
-
-            <br />
-            <asp:Label ID="lblProject" runat="server" Text="Project" ></asp:Label>
-            <asp:DropDownList ID="drpProject" runat="server" DataSourceID="objectProject" DataTextField="Name" DataValueField="projectID" CssClass="form-control"></asp:DropDownList>
-
-
-            <br />
-
-            <asp:Label ID="lblReviewee" runat="server" Text="Reviewee"></asp:Label>
-            <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control" OnSelectedIndexChanged="drpReviewee_SelectedIndexChanged"></asp:DropDownList>
-
-        <br />
-
-            <br />
-        <asp:ListView ID="lstView" runat="server" class="form-control"></asp:ListView>
-        <br />
-        <br />
-
+            
 
             <div class="table-responsive">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" class="table-responsive">
@@ -99,6 +114,8 @@
             <br />
             <br />
         </div>
+
+    </div>
 
     </div>
 

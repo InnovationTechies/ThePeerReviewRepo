@@ -13,11 +13,12 @@ namespace PeerReviewSystem.Models
         [Key]
         public int questionID { get; set; }
         public string Question { get; set; }
+        public string Role { get; set; }
 
         //Nav Properties
         //public Review Review { get; set; }
         //public List<Review> Reviews { get; set; }
-        
+
 
     }
 }

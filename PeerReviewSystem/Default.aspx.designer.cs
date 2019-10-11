@@ -85,13 +85,13 @@ namespace PeerReviewSystem {
         protected global::System.Web.UI.WebControls.DropDownList drpReviewee;
         
         /// <summary>
-        /// lstView control.
+        /// grdViewQuestions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lstView;
+        protected global::System.Web.UI.WebControls.GridView grdViewQuestions;
         
         /// <summary>
         /// GridView1 control.

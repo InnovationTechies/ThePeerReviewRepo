@@ -10,7 +10,7 @@ namespace PeerReviewSystem
 {
     public partial class _Default : Page
     {
-        public int empID { get; set; }
+        public string role { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -23,11 +23,11 @@ namespace PeerReviewSystem
 
         protected void drpReviewee_SelectedIndexChanged(object sender, EventArgs e)
         {
-            empID = Convert.ToInt32(drpReviewee.SelectedItem.Value);
+            role = drpReviewee.SelectedItem.Value;
 
             ReviewRepository reviewRepository = new ReviewRepository();
+            grdViewQuestions.DataSource = reviewRepository.GetQuestionsByEmployee(role);
 
-            lstView.DataSource = reviewRepository.GetQuestions();
         }
     }
 }
