@@ -11,6 +11,7 @@ namespace PeerReviewSystem
     public partial class _Default : Page
     {
         public string role { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -21,13 +22,12 @@ namespace PeerReviewSystem
 
         }
 
-        protected void drpReviewee_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            role = drpReviewee.SelectedItem.Value;
+        //protected void drpReviewee_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    role = drpReviewee.SelectedItem.Value;
+        //    ReviewRepository reviewRepository = new ReviewRepository();
+        //    grdViewQuestions.DataSource = reviewRepository.GetQuestions();
 
-            ReviewRepository reviewRepository = new ReviewRepository();
-            grdViewQuestions.DataSource = reviewRepository.GetQuestionsByEmployee(role);
-
-        }
+        //}
     }
 }

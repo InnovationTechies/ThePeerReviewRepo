@@ -16,7 +16,7 @@ namespace PeerReviewSystem
         void Application_Start(object sender, EventArgs e)
         {
             //Updates Database on change
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ReviewDbContext>());
+            Database.SetInitializer(new ReviewDDContextSeeder());
 
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -59,7 +59,6 @@ namespace PeerReviewSystem.Models
         /// <returns></returns>
         public List<Questions> GetQuestionsByEmployee(string Role)
         {
-
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Questions.Include(Role).ToList();
         }

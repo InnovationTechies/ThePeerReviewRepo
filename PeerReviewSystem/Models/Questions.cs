@@ -7,7 +7,7 @@ using System.Web;
 
 namespace PeerReviewSystem.Models
 {
-    [Table("tblQuestions")]
+
     public class Questions
     {
         [Key]

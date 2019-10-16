@@ -8,7 +8,6 @@ using System.Web;
 namespace PeerReviewSystem.Models
 {
 
-    [Table("tblProject")]
     public class Project
     {
         [Key]

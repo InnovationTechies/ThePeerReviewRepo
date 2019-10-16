@@ -7,7 +7,7 @@ using System.Web;
 
 namespace PeerReviewSystem.Models
 {
-    [Table("tblRating")]
+
     public class Rating
     {
         //Scalar Properties
