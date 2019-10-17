@@ -23,7 +23,7 @@ namespace PeerReviewSystem.Models
         public void UpdateReview(Review review)
         {
             Review reviewToUpdate= reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
-            reviewToUpdate.Project_Manager = review.ProjectLead.ToString();
+            reviewToUpdate.ProjectManager = review.ProjectLead.ToString();
             reviewToUpdate.project = review.Project.ToString();
             reviewToUpdate.ReviewDate = review.ReviewDate;
             reviewToUpdate.reviewer= review.Reviewer.ToString();
@@ -31,7 +31,6 @@ namespace PeerReviewSystem.Models
             reviewToUpdate.Questions = review.Questions;
             reviewToUpdate.Rating = review.Rating;
 
-            
             reviewDbContext.SaveChanges();
         }
 
@@ -52,6 +51,8 @@ namespace PeerReviewSystem.Models
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Employees.ToList();
         }
+
+
         /// <summary>
         /// Get the employee question by name
         /// </summary>
@@ -60,7 +61,7 @@ namespace PeerReviewSystem.Models
         public List<Questions> GetQuestionsByEmployee(string Role)
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Questions.Include(Role).ToList();
+            return reviewDbContext.Questions.Where(x=> x.Role==Role).ToList();
         }
 
         public  List<Questions> GetQuestions()
@@ -78,6 +79,12 @@ namespace PeerReviewSystem.Models
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Roles.Include("Employees").ToList();
         }
+        public List<Answers> GetAnswerRating()
+        {
+            ReviewDbContext reviewDbContext = new ReviewDbContext();
+            return reviewDbContext.Answer.ToList();
+        }
+
 
     }
 }

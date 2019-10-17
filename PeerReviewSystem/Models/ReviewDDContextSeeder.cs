@@ -6,7 +6,10 @@ using System.Web;
 
 namespace PeerReviewSystem.Models
 {
-    public class ReviewDDContextSeeder : DropCreateDatabaseAlways<ReviewDbContext>
+    /// <summary>
+    /// Seeder contains Test data
+    /// </summary>
+    public class ReviewDDContextSeeder : DropCreateDatabaseIfModelChanges<ReviewDbContext>
     {
         protected override void Seed(ReviewDbContext context)
         {
@@ -39,7 +42,7 @@ namespace PeerReviewSystem.Models
 
                 Name = "Zizi",
                 Surname = "Nzombane",
-                Role = "All"
+                Role = "Graphic Designer"
 
             };
             Employee employee1 = new Employee()
@@ -47,7 +50,7 @@ namespace PeerReviewSystem.Models
 
                 Name = "Ray",
                 Surname = "Finn",
-                Role = "All"
+                Role = "Animator"
 
             };
             Employee employee2 = new Employee()
@@ -55,10 +58,44 @@ namespace PeerReviewSystem.Models
 
                 Name = "Edwin",
                 Surname = "Toi",
-                Role = "All"
+                Role = "Animator"
 
             };
 
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Questions questionsRole1 = new Questions()
+            {
+                Question = "Understanding the Project’s Vision.",
+                Role = "Animator"
+
+            };
+            Questions questionsRole2 = new Questions()
+            {
+                Question = "Develops an animatic of the whole animation (Animatic).",
+                Role = "Animator"
+
+            };
+            Questions questionsRole3 = new Questions()
+            {
+                Question = "Visual style.",
+                Role = "Animator"
+
+            };
+            Questions questionsRole4 = new Questions()
+            {
+                Question = " Asset Creation.",
+                Role = "Animator"
+
+            };
+
+            Questions questionsRole5 = new Questions()
+            {
+                Question = "Animation.",
+                Role = "Animator"
+
+            };
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Questions questionsRole6 = new Questions()
             {
                 Question = "Aligns the graphic elements designed with the chosen style.",
@@ -168,6 +205,16 @@ namespace PeerReviewSystem.Models
             context.Answer.Add(answer1);
             context.Answer.Add(answer2);
 
+            context.Questions.Add(questionsRole1);
+            context.Questions.Add(questionsRole2);
+            context.Questions.Add(questionsRole3);
+            context.Questions.Add(questionsRole4);
+            context.Questions.Add(questionsRole5);
+
+            context.Questions.Add(questionsRole6);
+            context.Questions.Add(questionsRole7);
+            context.Questions.Add(questionsRole8);
+            context.Questions.Add(questionsRole9);
 
             base.Seed(context);
         }

@@ -18,8 +18,8 @@ namespace PeerReviewSystem.Models
         public DateTime ReviewDate { get; set; }
 
         //Nav Properties
-        public string Project_Manager { get; set; }
-        [Column("Project_Manager")]
+        public string ProjectManager { get; set; }
+        [Column("ProjectManager")]
         [ForeignKey("empID")]
         public IEnumerable<Employee> ProjectLead { get; set; }
 

@@ -17,10 +17,7 @@ namespace PeerReviewSystem
             
         }
 
-        protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-        {
 
-        }
 
         //protected void drpReviewee_SelectedIndexChanged(object sender, EventArgs e)
         //{
