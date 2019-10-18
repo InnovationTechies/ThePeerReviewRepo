@@ -85,6 +85,15 @@ namespace PeerReviewSystem {
         protected global::System.Web.UI.WebControls.DropDownList drpReviewee;
         
         /// <summary>
+        /// repRev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repRev;
+        
+        /// <summary>
         /// grdViewQuestions control.
         /// </summary>
         /// <remarks>
@@ -101,6 +110,15 @@ namespace PeerReviewSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdReview;
+        
+        /// <summary>
+        /// DataList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList DataList1;
         
         /// <summary>
         /// DetailsView1 control.

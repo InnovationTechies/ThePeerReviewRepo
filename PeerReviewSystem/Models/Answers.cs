@@ -9,5 +9,7 @@ namespace PeerReviewSystem.Models
         string rating;
 
         public string Rating { get => rating; set => rating = value; }
+        public Review Review { get; set; }
+
     }
 }

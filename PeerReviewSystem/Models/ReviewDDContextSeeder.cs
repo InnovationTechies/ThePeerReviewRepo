@@ -121,16 +121,16 @@ namespace PeerReviewSystem.Models
 
             };
 
-            Answers answer = new Answers() {
-                Rating = "Exceptional Performance"
+            Rating answer = new Rating() {
+                rating = "Exceptional Performance"
             };
-            Answers answer1 = new Answers()
+            Rating answer1 = new Rating()
             {
-                Rating = "Full Performance"
+                rating = "Full Performance"
             };
-            Answers answer2 = new Answers()
+            Rating answer2 = new Rating()
             {
-                Rating = "Not full Performance"
+                rating = "Not full Performance"
             };
 
             //Exceptional Performance
@@ -201,9 +201,9 @@ namespace PeerReviewSystem.Models
             context.Employees.Add(employee1);
             context.Employees.Add(employee2);
 
-            context.Answer.Add(answer);
-            context.Answer.Add(answer1);
-            context.Answer.Add(answer2);
+            context.Responses.Add(answer);
+            context.Responses.Add(answer1);
+            context.Responses.Add(answer2);
 
             context.Questions.Add(questionsRole1);
             context.Questions.Add(questionsRole2);

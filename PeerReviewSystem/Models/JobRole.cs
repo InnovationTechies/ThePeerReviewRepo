@@ -16,7 +16,9 @@ namespace PeerReviewSystem.Models
 
         //Nav Properties
         //public List<Employee> Employees { get; set; }
-        
+        public Review Review { get; set; }
+
+
 
     }
 }

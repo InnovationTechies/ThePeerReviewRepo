@@ -79,10 +79,10 @@ namespace PeerReviewSystem.Models
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Roles.Include("Employees").ToList();
         }
-        public List<Answers> GetAnswerRating()
+        public List<Rating> GetAnswerRating()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Answer.ToList();
+            return reviewDbContext.Responses.ToList();
         }
 
 

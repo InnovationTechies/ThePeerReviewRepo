@@ -15,27 +15,26 @@
             <br />
             <asp:Label ID="lblProject" runat="server" Text="Project"></asp:Label>
             <asp:DropDownList ID="drpProject" runat="server" DataSourceID="objectProject" DataTextField="Name" DataValueField="projectID" CssClass="form-control"></asp:DropDownList>
-            
+
             <br />
             <asp:Label ID="lblReviewee" runat="server" Text="Reviewee"></asp:Label>
             <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="Role" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
 
         </div>
+        <asp:Repeater ID="repRev" runat="server" DataSourceID="objectReview">
+            <ItemTemplate>
+               
+            </ItemTemplate>
+        </asp:Repeater>
+
         <br />
 
         <asp:GridView ID="grdViewQuestions" runat="server" class="table-responsive" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table-responsive" AutoGenerateColumns="False" DataSourceID="objectQuestions">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID"  Visible="false"/>
+                <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" />
                 <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
                 <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
-                <asp:TemplateField>
-                    <ItemTemplate>
-                        <asp:DropDownList ID="drpAnswers" runat="server" DataSourceID="objectAnswers" DataTextField="Rating" DataValueField="answerID">
-                        </asp:DropDownList>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:ButtonField Text="Save"></asp:ButtonField>
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -48,14 +47,11 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        <div />
 
-        <br />
 
         <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" class="table-responsive">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowEditButton="True" />
                 <asp:BoundField DataField="reviewID" HeaderText="reviewID" SortExpression="reviewID" />
                 <asp:BoundField DataField="ReviewDate" HeaderText="ReviewDate" SortExpression="ReviewDate" />
                 <asp:BoundField DataField="ProjectManager" HeaderText="ProjectManager" SortExpression="ProjectManager" />
@@ -65,22 +61,9 @@
                 <asp:BoundField DataField="question" HeaderText="question" SortExpression="question" />
                 <asp:BoundField DataField="rating" HeaderText="rating" SortExpression="rating" />
 
-                <asp:TemplateField HeaderText="Team Lead">
-                    <ItemTemplate>
-                        <asp:DropDownList ID="drpTeamLead" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID">
-                        </asp:DropDownList>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Reviewer">
-                    <ItemTemplate>
-                        <asp:DropDownList ID="drpBoundReviewer" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID">
-                        </asp:DropDownList>
-                    </ItemTemplate>
-                </asp:TemplateField>
-            
             </Columns>
-            <EditRowStyle BackColor="#2461BF"  />
-            
+            <EditRowStyle BackColor="#2461BF" />
+
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
@@ -91,15 +74,32 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="objectQuestions">
+            <ItemTemplate>
+                questionID:
+                <asp:Label ID="questionIDLabel" runat="server" Text='<%# Eval("questionID") %>' />
+                <br />
+                Question:
+                <asp:Label ID="QuestionLabel" runat="server" Text='<%# Eval("Question") %>' />
+                <br />
+                Role:
+                <asp:Label ID="RoleLabel" runat="server" Text='<%# Eval("Role") %>' />
+                <br />
+                Review:
+                <asp:Label ID="ReviewLabel" runat="server" Text='<%# Eval("Review") %>' />
+                <br />
+<br />
+            </ItemTemplate>
+        </asp:DataList>
         <br />
 
-        <asp:DetailsView ID="DetailsView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="objectReview" DefaultMode="Insert" DataKeyNames="reviewID" CssClass="form-control">
+        <asp:DetailsView ID="DetailsView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="objectReview" DefaultMode="Insert" CssClass="form-control">
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
             <EditRowStyle BackColor="#2461BF" />
             <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
             <Fields>
-                <asp:BoundField DataField="reviewID" HeaderText="reviewID" SortExpression="reviewID" Visible="false" />
+                <asp:BoundField DataField="reviewID" HeaderText="reviewID" SortExpression="reviewID" />
                 <asp:BoundField DataField="ReviewDate" HeaderText="ReviewDate" SortExpression="ReviewDate" />
                 <asp:BoundField DataField="ProjectManager" HeaderText="ProjectManager" SortExpression="ProjectManager" />
                 <asp:BoundField DataField="reviewer" HeaderText="reviewer" SortExpression="reviewer" />
@@ -107,14 +107,13 @@
                 <asp:BoundField DataField="reviewee" HeaderText="reviewee" SortExpression="reviewee" />
                 <asp:BoundField DataField="question" HeaderText="question" SortExpression="question" />
                 <asp:BoundField DataField="rating" HeaderText="rating" SortExpression="rating" />
-                <asp:CommandField ShowInsertButton="True" />
             </Fields>
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#EFF3FB" />
         </asp:DetailsView>
-        
+
         <br />
         <asp:ObjectDataSource ID="objectAnswers" runat="server" SelectMethod="GetAnswerRating" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
         <asp:ObjectDataSource ID="objectEmployee" runat="server" SelectMethod="GetEmployees" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
@@ -137,13 +136,5 @@
         <br />
 
     </div>
-    <br />
-    <br />
-
-
-
-    </div>
-
-
 
 </asp:Content>
