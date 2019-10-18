@@ -74,7 +74,11 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        <asp:DataList ID="DataList1" runat="server" DataSourceID="objectQuestions">
+        <asp:DataList ID="DataList1" runat="server" CellPadding="4" DataSourceID="objectQuestions" ForeColor="#333333">
+            <AlternatingItemStyle BackColor="White" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <ItemStyle BackColor="#EFF3FB" />
             <ItemTemplate>
                 questionID:
                 <asp:Label ID="questionIDLabel" runat="server" Text='<%# Eval("questionID") %>' />
@@ -90,6 +94,7 @@
                 <br />
 <br />
             </ItemTemplate>
+            <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
         </asp:DataList>
         <br />
 
