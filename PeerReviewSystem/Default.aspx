@@ -74,6 +74,7 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
+        <br />
         <asp:DataList ID="DataList1" runat="server" CellPadding="4" DataSourceID="objectQuestions" ForeColor="#333333">
             <AlternatingItemStyle BackColor="White" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
