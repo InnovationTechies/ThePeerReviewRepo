@@ -24,7 +24,7 @@ namespace PeerReviewSystem.Models
             Project project1 = new Project()
             {
 
-                StartDate = DateTime.Now.Date,
+                StartDate = DateTime.Now.Date,                                                                          
                 EndDate = DateTime.Now.AddDays(2),
                 Name = "Sasol VR"
 

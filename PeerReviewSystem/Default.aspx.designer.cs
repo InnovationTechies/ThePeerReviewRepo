@@ -85,22 +85,22 @@ namespace PeerReviewSystem {
         protected global::System.Web.UI.WebControls.DropDownList drpReviewee;
         
         /// <summary>
-        /// repRev control.
+        /// grdRevQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repRev;
+        protected global::System.Web.UI.WebControls.GridView grdRevQuestion;
         
         /// <summary>
-        /// grdViewQuestions control.
+        /// btnSaveReview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdViewQuestions;
+        protected global::System.Web.UI.WebControls.Button btnSaveReview;
         
         /// <summary>
         /// grdReview control.
@@ -110,24 +110,6 @@ namespace PeerReviewSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdReview;
-        
-        /// <summary>
-        /// DataList1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
-        
-        /// <summary>
-        /// DetailsView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
         
         /// <summary>
         /// objectAnswers control.
