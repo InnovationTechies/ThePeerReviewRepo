@@ -16,7 +16,7 @@ namespace PeerReviewSystem.Models
         public string rating { get; set; }
 
         //Nav Properties
-        public Review Review { get; set; }
+        //public Review Review { get; set; }
 
         //public Review Review { get; set; }
         //public List<Review> Reviews { get; set; }

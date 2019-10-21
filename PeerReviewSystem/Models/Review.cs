@@ -18,35 +18,29 @@ namespace PeerReviewSystem.Models
         public DateTime ReviewDate { get; set; }
 
         //Nav Properties
-        public string ProjectManager { get; set; }
-        [Column("ProjectManager")]
-        [ForeignKey("empID")]
-        public IEnumerable<Employee> ProjectLead { get; set; }
+        public int projecctManagerID { get; set; }
+        [ForeignKey("projecctManagerID")]
+        public Employee ProjectLead { get; set; }
 
-        public string reviewer{ get; set; }
-        [Column("Reviewer")]
-        [ForeignKey("empID")]
-        public IEnumerable<Employee> Reviewer { get; set; }
+        public int reviewerID{ get; set; }
+        [ForeignKey("reviewerID")]
+        public Employee Reviewer { get; set; }
 
-        public string project { get; set; }
-        [Column("Project")]
+        public int revieweeID { get; set; }
+        [ForeignKey("revieweeID")]
+        public Employee Reviewee { get; set; }
+
+        public int projectID { get; set; }
         [ForeignKey("projectID")]
-        public IEnumerable<Project> Project { get; set; }
+        public Project Project { get; set; }
 
-        public string reviewee { get; set; }
-        [Column("Reviewee")]
-        [ForeignKey("empID")]
-        public IEnumerable<Employee> Reviewee { get; set; }
-
-        public string question { get; set; }
-        [Column("Question")]
+        public int questionID { get; set; }
         [ForeignKey("questionID")]
-        public IEnumerable<Questions> Questions { get; set; }
+        public Questions Questions { get; set; }
 
-        public string rating { get; set; }
-        [Column("Rating")]
-        [ForeignKey("rateID")]
-        public IEnumerable<Rating> Rating { get; set; }
+        public int ratingID { get; set; }
+        [ForeignKey("ratingID")]
+        public Rating Rating { get; set; }
 
     }
 }

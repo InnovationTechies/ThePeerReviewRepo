@@ -23,13 +23,13 @@ namespace PeerReviewSystem.Models
         public void UpdateReview(Review review)
         {
             Review reviewToUpdate= reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
-            reviewToUpdate.ProjectManager = review.ProjectLead.ToString();
-            reviewToUpdate.project = review.Project.ToString();
+            reviewToUpdate.projecctManagerID = review.projecctManagerID;
+            reviewToUpdate.projectID = review.projectID;
             reviewToUpdate.ReviewDate = review.ReviewDate;
-            reviewToUpdate.reviewer= review.Reviewer.ToString();
-            reviewToUpdate.reviewee = review.Reviewee.ToString();
-            reviewToUpdate.Questions = review.Questions;
-            reviewToUpdate.Rating = review.Rating;
+            reviewToUpdate.reviewerID= review.revieweeID;
+            reviewToUpdate.revieweeID = review.revieweeID;
+            reviewToUpdate.questionID = review.questionID;
+            reviewToUpdate.ratingID = review.ratingID;
 
             reviewDbContext.SaveChanges();
         }

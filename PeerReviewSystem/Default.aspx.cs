@@ -10,12 +10,12 @@ namespace PeerReviewSystem
 {
     public partial class _Default : Page
     {
-        public string role { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
+
         /// <summary>
         /// Save review by reviewwer into review table
         /// </summary>
@@ -26,7 +26,6 @@ namespace PeerReviewSystem
             ReviewRepository repository = new ReviewRepository();
             Review review;
 
-            
             foreach (GridViewRow row in grdRevQuestion.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
@@ -35,14 +34,13 @@ namespace PeerReviewSystem
                     //Your other code
                     review = new Review()
                     {
-                        project = drpProject.SelectedItem.Text,
-                        ProjectManager = drpProjectLead.SelectedItem.Text,
+                        projectID = int.Parse( drpProject.SelectedValue),
+                        projecctManagerID = int.Parse( drpProjectLead.SelectedValue),
                         ReviewDate = DateTime.Today,
-                        reviewer = dropReviewer.SelectedItem.Text,
-                        reviewee = drpReviewee.SelectedItem.Text,
-                        question = row.Cells[1].Text,
-                        rating= dropDown.SelectedItem.Text
-
+                        reviewerID = int.Parse(dropReviewer.SelectedValue),
+                        revieweeID = int.Parse(drpReviewee.SelectedValue),
+                        questionID = int.Parse(row.Cells[0].Text),
+                        ratingID= int.Parse(dropDown.SelectedValue)
                     };
 
                     repository.InsertReview(review);
