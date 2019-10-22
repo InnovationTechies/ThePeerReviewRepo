@@ -18,29 +18,29 @@ namespace PeerReviewSystem.Models
         public DateTime ReviewDate { get; set; }
 
         //Nav Properties
+        [ForeignKey("ProjectLead")]
         public int projecctManagerID { get; set; }
-        [ForeignKey("projecctManagerID")]
-        public Employee ProjectLead { get; set; }
+        public virtual Employee ProjectLead { get; set; }
 
+        [ForeignKey("Reviewer")]
         public int reviewerID{ get; set; }
-        [ForeignKey("reviewerID")]
-        public Employee Reviewer { get; set; }
+        public virtual Employee Reviewer { get; set; }
 
+        [ForeignKey("Reviewee")]
         public int revieweeID { get; set; }
-        [ForeignKey("revieweeID")]
-        public Employee Reviewee { get; set; }
+        public virtual Employee Reviewee { get; set; }
 
+        [ForeignKey("Project")]
         public int projectID { get; set; }
-        [ForeignKey("projectID")]
-        public Project Project { get; set; }
+        public virtual Project Project { get; set; }
 
+        [ForeignKey("Questions")]
         public int questionID { get; set; }
-        [ForeignKey("questionID")]
-        public Questions Questions { get; set; }
+        public virtual Questions Questions { get; set; }
 
+        [ForeignKey("Rating")]
         public int ratingID { get; set; }
-        [ForeignKey("ratingID")]
-        public Rating Rating { get; set; }
+        public virtual Rating Rating { get; set; }
 
     }
 }
