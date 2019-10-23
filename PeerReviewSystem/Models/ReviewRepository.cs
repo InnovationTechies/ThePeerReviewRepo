@@ -41,12 +41,12 @@ namespace PeerReviewSystem.Models
             reviewDbContext.SaveChanges();
         }
 
-        public List<Review> GetReviews()
+        public IEnumerable<Review> GetReviews()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Reviews.ToList();
         }
-        public  List<Employee> GetEmployees()
+        public IEnumerable<Employee> GetEmployees()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Employees.ToList();
@@ -58,28 +58,28 @@ namespace PeerReviewSystem.Models
         /// </summary>
         /// <param name="review"></param>
         /// <returns></returns>
-        public List<Questions> GetQuestionsByEmployee(string Role)
+        public IEnumerable<Questions> GetQuestionsByEmployee(string Role)
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Questions.Where(x=> x.Role==Role).ToList();
         }
 
-        public  List<Questions> GetQuestions()
+        public IEnumerable<Questions> GetQuestions()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Questions.ToList();
         }
-        public List<Project> GetProjects()
+        public IEnumerable<Project> GetProjects()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Projects.ToList();
         }
-        public List<JobRole> GetJobRoles()
+        public IEnumerable<JobRole> GetJobRoles()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Roles.Include("Employees").ToList();
         }
-        public List<Rating> GetAnswerRating()
+        public IEnumerable<Rating> GetAnswerRating()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Responses.ToList();
