@@ -14,11 +14,11 @@ namespace PeerReviewSystem.Models
 
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Role { get; set; }
+        public int RoleID { get; set; }
+        public JobRole JobRole { get; set; }
+                                           //Nav Properties
 
-        //Nav Properties
-
-       // public Review Review { get; set; }
+        // public Review Review { get; set; }
         //public List<Review> Reviews { get; set; }
 
 

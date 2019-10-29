@@ -23,7 +23,7 @@ namespace PeerReviewSystem.Models
         public void UpdateReview(Review review)
         {
             Review reviewToUpdate= reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
-            reviewToUpdate.projecctManagerID = review.projecctManagerID;
+            reviewToUpdate.ProjectLeadID = review.ProjectLeadID;
             reviewToUpdate.projectID = review.projectID;
             reviewToUpdate.ReviewDate = review.ReviewDate;
             reviewToUpdate.reviewerID= review.revieweeID;

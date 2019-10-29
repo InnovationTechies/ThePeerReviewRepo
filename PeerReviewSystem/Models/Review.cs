@@ -18,7 +18,7 @@ namespace PeerReviewSystem.Models
         public DateTime ReviewDate { get; set; }
 
         //Nav Properties
-        public int projecctManagerID { get; set; }
+        public int ProjectLeadID { get; set; }
         public virtual Employee ProjectLead { get; set; }
 
         public int reviewerID{ get; set; }

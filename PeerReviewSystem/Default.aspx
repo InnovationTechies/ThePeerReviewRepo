@@ -2,6 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    &nbsp;&nbsp;&nbsp;
+
     <style type="text/css">
         .rounded_corners {
             border: 1px solid #A1DCF2;
@@ -39,7 +41,7 @@
 
             <br />
             <asp:Label ID="lblReviewee" runat="server" Text="Reviewee"></asp:Label>
-            <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="Role" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="drpReviewee_SelectedIndexChanged"></asp:DropDownList>
+            <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="drpReviewee_SelectedIndexChanged"></asp:DropDownList>
             <br />
 
             <hr />

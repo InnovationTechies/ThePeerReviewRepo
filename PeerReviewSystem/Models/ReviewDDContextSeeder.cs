@@ -13,6 +13,25 @@ namespace PeerReviewSystem.Models
     {
         protected override void Seed(ReviewDbContext context)
         {
+            JobRole jobRole = new JobRole()
+            {
+                Role = "Animator"
+            };
+
+            JobRole jobRole1 = new JobRole()
+            {
+                Role = "Graphic Designer"
+            };
+            JobRole jobRole2 = new JobRole()
+            {
+                Role = "Editor"
+            };
+
+            JobRole jobRole3 = new JobRole()
+            {
+                Role = "Sound"
+            };
+
             Project project = new Project()
             {
 
@@ -42,15 +61,14 @@ namespace PeerReviewSystem.Models
 
                 Name = "Zizi",
                 Surname = "Nzombane",
-                Role = "Graphic Designer"
-
+                RoleID = 3
             };
             Employee employee1 = new Employee()
             {
 
                 Name = "Ray",
                 Surname = "Finn",
-                Role = "Animator"
+                RoleID = 4
 
             };
             Employee employee2 = new Employee()
@@ -58,7 +76,7 @@ namespace PeerReviewSystem.Models
 
                 Name = "Edwin",
                 Surname = "Toi",
-                Role = "Animator"
+                RoleID = 1
 
             };
 

@@ -35,7 +35,7 @@ namespace PeerReviewSystem
                     review = new Review()
                     {
                         projectID = int.Parse( drpProject.SelectedValue),
-                        projecctManagerID = int.Parse( drpProjectLead.SelectedValue),
+                        ProjectLeadID = int.Parse( drpProjectLead.SelectedValue),
                         ReviewDate = DateTime.Today,
                         reviewerID = int.Parse(dropReviewer.SelectedValue),
                         revieweeID = int.Parse(drpReviewee.SelectedValue),
