@@ -58,10 +58,10 @@ namespace PeerReviewSystem.Models
         /// </summary>
         /// <param name="review"></param>
         /// <returns></returns>
-        public IEnumerable<Questions> GetQuestionsByEmployee(string Role)
+        public IEnumerable<Questions> GetQuestionsByEmployee(int RoleID)
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Questions.Where(x=> x.Role==Role).ToList();
+            return reviewDbContext.Questions.Where(x=> x.RoleID== RoleID).ToList();
         }
 
         public IEnumerable<Questions> GetQuestions()

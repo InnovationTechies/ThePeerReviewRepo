@@ -9,7 +9,7 @@ namespace PeerReviewSystem.Models
     /// <summary>
     /// Seeder contains Test data
     /// </summary>
-    public class ReviewDDContextSeeder : DropCreateDatabaseIfModelChanges<ReviewDbContext>
+    public class ReviewDDContextSeeder : DropCreateDatabaseAlways<ReviewDbContext>
     {
         protected override void Seed(ReviewDbContext context)
         {
@@ -17,7 +17,6 @@ namespace PeerReviewSystem.Models
             {
                 Role = "Animator"
             };
-
             JobRole jobRole1 = new JobRole()
             {
                 Role = "Graphic Designer"
@@ -26,19 +25,21 @@ namespace PeerReviewSystem.Models
             {
                 Role = "Editor"
             };
-
             JobRole jobRole3 = new JobRole()
             {
                 Role = "Sound"
             };
 
+            context.Roles.Add(jobRole);
+            context.Roles.Add(jobRole1);
+            context.Roles.Add(jobRole2);
+            context.Roles.Add(jobRole3);
+
             Project project = new Project()
             {
-
                 StartDate = DateTime.Now.Date,
                 EndDate = DateTime.Now.Date.AddMonths(6),
                 Name = "Kazi Bazibantu"
-
             };
             Project project1 = new Project()
             {
@@ -84,32 +85,30 @@ namespace PeerReviewSystem.Models
             Questions questionsRole1 = new Questions()
             {
                 Question = "Understanding the Project’s Vision.",
-                Role = "Animator"
+                RoleID = 1
 
             };
             Questions questionsRole2 = new Questions()
             {
                 Question = "Develops an animatic of the whole animation (Animatic).",
-                Role = "Animator"
-
+                RoleID = 1
             };
             Questions questionsRole3 = new Questions()
             {
                 Question = "Visual style.",
-                Role = "Animator"
+                RoleID = 1
 
             };
             Questions questionsRole4 = new Questions()
             {
                 Question = " Asset Creation.",
-                Role = "Animator"
+                RoleID = 1
 
             };
-
             Questions questionsRole5 = new Questions()
             {
                 Question = "Animation.",
-                Role = "Animator"
+                RoleID = 1
 
             };
 
@@ -117,25 +116,25 @@ namespace PeerReviewSystem.Models
             Questions questionsRole6 = new Questions()
             {
                 Question = "Aligns the graphic elements designed with the chosen style.",
-                Role = "Graphic Designer"
+                RoleID = 2
 
             };
             Questions questionsRole7 = new Questions()
             {
                 Question = "Creating Graphic Elements for Video.",
-                Role = "Graphic Designer"
+                RoleID = 2
 
             };
             Questions questionsRole8 = new Questions()
             {
                 Question = "Creating Graphic Elements for Animation.",
-                Role = "Graphic Designer"
+                RoleID = 2
 
             };
             Questions questionsRole9 = new Questions()
             {
                 Question = "Focus on the General Design.",
-                Role = "Graphic Designer"
+                RoleID = 2
 
             };
 
@@ -210,6 +209,7 @@ namespace PeerReviewSystem.Models
 
             //};
 
+            
 
             context.Projects.Add(project);
             context.Projects.Add(project1);

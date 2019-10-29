@@ -41,7 +41,7 @@
 
             <br />
             <asp:Label ID="lblReviewee" runat="server" Text="Reviewee"></asp:Label>
-            <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="drpReviewee_SelectedIndexChanged"></asp:DropDownList>
+            <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="RoleID" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="drpReviewee_SelectedIndexChanged"></asp:DropDownList>
             <br />
 
             <hr />
@@ -49,15 +49,9 @@
                 <asp:GridView ID="grdRevQuestion" runat="server" class="table-responsive" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" AutoGenerateColumns="False" DataSourceID="objectQuestions" AllowPaging="True">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" Visible="false" />
+                        <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" />
                         <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
-                        <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:DropDownList ID="drpRating" runat="server" DataSourceID="objectAnswers" DataTextField="rating" DataValueField="rateID" CssClass="form-control">
-                                </asp:DropDownList>
-                            </ItemTemplate>
-                        </asp:TemplateField>
+                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -143,7 +137,7 @@
         <asp:ObjectDataSource ID="objectProject" runat="server" SelectMethod="GetProjects" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
         <asp:ObjectDataSource ID="objectQuestions" runat="server" SelectMethod="GetQuestionsByEmployee" TypeName="PeerReviewSystem.Models.ReviewRepository">
             <SelectParameters>
-                <asp:ControlParameter ControlID="drpReviewee" PropertyName="SelectedValue" Name="Role" Type="String"></asp:ControlParameter>
+                <asp:ControlParameter ControlID="drpReviewee" PropertyName="SelectedValue" Name="RoleID" Type="Int32"></asp:ControlParameter>
             </SelectParameters>
         </asp:ObjectDataSource>
 
