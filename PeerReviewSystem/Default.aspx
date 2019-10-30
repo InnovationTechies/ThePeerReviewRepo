@@ -81,6 +81,21 @@
         <br />
         <br />
         <br />
+        <asp:DetailsView ID="DetailsViewjobRole" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="roleID" DataSourceID="objectJobRole" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
+            <AlternatingRowStyle BackColor="White" />
+            <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+            <EditRowStyle BackColor="#2461BF" />
+            <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+            <Fields>
+                <asp:BoundField DataField="roleID" HeaderText="roleID" SortExpression="roleID" />
+                <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
+                <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
+            </Fields>
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+        </asp:DetailsView>
         <br />
         <br />
         <br />
@@ -143,6 +158,7 @@
 
         <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="GetReviews" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview"></asp:ObjectDataSource>
         <br />
+        <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
         <br />
         <br />
         <br />

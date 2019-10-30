@@ -9,7 +9,7 @@ namespace PeerReviewSystem.Models
     /// <summary>
     /// Seeder contains Test data
     /// </summary>
-    public class ReviewDDContextSeeder : DropCreateDatabaseAlways<ReviewDbContext>
+    public class ReviewDDContextSeeder : DropCreateDatabaseIfModelChanges<ReviewDbContext>
     {
         protected override void Seed(ReviewDbContext context)
         {

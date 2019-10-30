@@ -74,10 +74,25 @@ namespace PeerReviewSystem.Models
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Projects.ToList();
         }
+
+        public void InsertRole (JobRole jobRole)
+        {
+            reviewDbContext.Roles.Add(jobRole);
+            reviewDbContext.SaveChanges();
+        }
+
+        public void UpdatetRole(JobRole jobRole)
+        {
+            JobRole jobRoleToUpdate = reviewDbContext.Roles.FirstOrDefault(x => x.roleID == jobRole.roleID);
+            jobRoleToUpdate.Role= jobRole.Role;
+            reviewDbContext.SaveChanges();
+        }
+
+
         public IEnumerable<JobRole> GetJobRoles()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Roles.Include("Employees").ToList();
+            return reviewDbContext.Roles.ToList();
         }
         public IEnumerable<Rating> GetAnswerRating()
         {
