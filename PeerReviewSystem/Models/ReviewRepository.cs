@@ -61,7 +61,7 @@ namespace PeerReviewSystem.Models
         public IEnumerable<Questions> GetQuestionsByEmployee(int RoleID)
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Questions.Where(x=> x.RoleID== RoleID).ToList();
+            return reviewDbContext.Questions.Where(x=> x.RoleID== RoleID || x.RoleID==5 ).ToList();
         }
 
         public IEnumerable<Questions> GetQuestions()

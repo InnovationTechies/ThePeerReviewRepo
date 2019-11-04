@@ -17,7 +17,7 @@
                 border: 1px solid #A1DCF2;
                 font-family: Arial;
                 font-size: 10pt;
-                text-align: center;
+                text-align: left;
             }
 
             .rounded_corners table table td {
@@ -49,9 +49,20 @@
                 <asp:GridView ID="grdRevQuestion" runat="server" class="table-responsive" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" AutoGenerateColumns="False" DataSourceID="objectQuestions" AllowPaging="True">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" />
+                        <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" Visible="false"/>
                         <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
-                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID" />
+                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID"  Visible="false"/>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:DropDownList ID="drpRating" runat="server" DataSourceID="objectAnswers" DataTextField="rating" DataValueField="rateID" CssClass="form-control">
+                                </asp:DropDownList>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Label ID="lblQuestionID" runat="server" Text=""></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -81,7 +92,7 @@
         <br />
         <br />
         <br />
-        <asp:DetailsView ID="DetailsViewjobRole" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="roleID" DataSourceID="objectJobRole" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
+<%--        <asp:DetailsView ID="DetailsViewjobRole" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="roleID" DataSourceID="objectJobRole" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
             <EditRowStyle BackColor="#2461BF" />
@@ -95,7 +106,7 @@
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#EFF3FB" />
-        </asp:DetailsView>
+        </asp:DetailsView>--%>
         <br />
         <br />
         <br />
