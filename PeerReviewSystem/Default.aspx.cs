@@ -39,7 +39,7 @@ namespace PeerReviewSystem
                         ReviewDate = DateTime.Today,
                         reviewerID = int.Parse(dropReviewer.SelectedValue),
                         revieweeID = int.Parse(drpReviewee.SelectedValue),
-                        questionID = int.Parse(row.Cells[1].Text),
+                        questionID = int.Parse(row.Cells[2].Text),
                         ratingID= int.Parse(dropDown.SelectedValue)
                     };
 

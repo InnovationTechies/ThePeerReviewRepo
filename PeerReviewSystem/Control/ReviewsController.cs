@@ -18,7 +18,7 @@ namespace PeerReviewSystem.Control
         // GET: Reviews
         public ActionResult Index()
         {
-            var reviews = db.Reviews.Include(r => r.Project).Include(r => r.ProjectLead).Include(r => r.Questions).Include(r => r.Rating).Include(r => r.Reviewee).Include(r => r.Reviewer);
+            var reviews = db.Reviews.Include(r => r.Project).Include(r => r.Questions);
             return View(reviews.ToList());
         }
 
@@ -40,12 +40,8 @@ namespace PeerReviewSystem.Control
         // GET: Reviews/Create
         public ActionResult Create()
         {
-            ViewBag.reviewID = new SelectList(db.Projects, "projectID", "Name");
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name");
-            ViewBag.reviewID = new SelectList(db.Questions, "questionID", "Question");
-            ViewBag.reviewID = new SelectList(db.Responses, "rateID", "rating");
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name");
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name");
+            ViewBag.projectID = new SelectList(db.Projects, "projectID", "Name");
+            ViewBag.questionID = new SelectList(db.Questions, "questionID", "Question");
             return View();
         }
 
@@ -54,7 +50,7 @@ namespace PeerReviewSystem.Control
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "reviewID,ReviewDate")] Review review)
+        public ActionResult Create([Bind(Include = "reviewID,ReviewDate,ProjectLeadID,reviewerID,revieweeID,projectID,questionID,ratingID")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -63,12 +59,8 @@ namespace PeerReviewSystem.Control
                 return RedirectToAction("Index");
             }
 
-            ViewBag.reviewID = new SelectList(db.Projects, "projectID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Questions, "questionID", "Question", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Responses, "rateID", "rating", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
+            ViewBag.projectID = new SelectList(db.Projects, "projectID", "Name", review.projectID);
+            ViewBag.questionID = new SelectList(db.Questions, "questionID", "Question", review.questionID);
             return View(review);
         }
 
@@ -84,12 +76,8 @@ namespace PeerReviewSystem.Control
             {
                 return HttpNotFound();
             }
-            ViewBag.reviewID = new SelectList(db.Projects, "projectID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Questions, "questionID", "Question", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Responses, "rateID", "rating", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
+            ViewBag.projectID = new SelectList(db.Projects, "projectID", "Name", review.projectID);
+            ViewBag.questionID = new SelectList(db.Questions, "questionID", "Question", review.questionID);
             return View(review);
         }
 
@@ -98,7 +86,7 @@ namespace PeerReviewSystem.Control
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "reviewID,ReviewDate")] Review review)
+        public ActionResult Edit([Bind(Include = "reviewID,ReviewDate,ProjectLeadID,reviewerID,revieweeID,projectID,questionID,ratingID")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -106,12 +94,8 @@ namespace PeerReviewSystem.Control
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.reviewID = new SelectList(db.Projects, "projectID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Questions, "questionID", "Question", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Responses, "rateID", "rating", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
-            ViewBag.reviewID = new SelectList(db.Employees, "empID", "Name", review.reviewID);
+            ViewBag.projectID = new SelectList(db.Projects, "projectID", "Name", review.projectID);
+            ViewBag.questionID = new SelectList(db.Questions, "questionID", "Question", review.questionID);
             return View(review);
         }
 

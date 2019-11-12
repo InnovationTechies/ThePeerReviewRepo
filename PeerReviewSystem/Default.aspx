@@ -40,7 +40,7 @@
             <asp:DropDownList ID="drpProject" runat="server" DataSourceID="objectProject" DataTextField="Name" DataValueField="projectID" CssClass="form-control"></asp:DropDownList>
 
             <br />
-            <asp:Label ID="lblReviewee" runat="server" Text="Reviewee"></asp:Label>
+            <asp:Label ID="lblReviewee" runat="server" Text="Reviewing"></asp:Label>
             <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="RoleID" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="drpReviewee_SelectedIndexChanged"></asp:DropDownList>
             <br />
 
@@ -51,7 +51,7 @@
                     <Columns>
                         <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" Visible="false"/>
                         <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
-                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID"  Visible="false"/>
+                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID"/>
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:DropDownList ID="drpRating" runat="server" DataSourceID="objectAnswers" DataTextField="rating" DataValueField="rateID" CssClass="form-control">
@@ -60,7 +60,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Label ID="lblQuestionID" runat="server" Text=""></asp:Label>
+                                
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -132,15 +132,14 @@
         <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" AllowPaging="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True"></asp:CommandField>
                 <asp:BoundField DataField="reviewID" HeaderText="reviewID" SortExpression="reviewID" />
                 <asp:BoundField DataField="ReviewDate" HeaderText="ReviewDate" SortExpression="ReviewDate" />
-                <asp:BoundField DataField="ProjectManager" HeaderText="ProjectManager" SortExpression="ProjectManager" />
-                <asp:BoundField DataField="reviewer" HeaderText="reviewer" SortExpression="reviewer" />
-                <asp:BoundField DataField="project" HeaderText="project" SortExpression="project" />
-                <asp:BoundField DataField="reviewee" HeaderText="reviewee" SortExpression="reviewee" />
-                <asp:BoundField DataField="question" HeaderText="question" SortExpression="question" />
-                <asp:BoundField DataField="rating" HeaderText="rating" SortExpression="rating" />
+                <asp:BoundField DataField="ProjectLeadID" HeaderText="ProjectLeadID" SortExpression="ProjectLeadID" />
+                <asp:BoundField DataField="reviewerID" HeaderText="reviewerID" SortExpression="reviewerID" />
+                <asp:BoundField DataField="revieweeID" HeaderText="revieweeID" SortExpression="revieweeID" />
+                <asp:BoundField DataField="projectID" HeaderText="projectID" SortExpression="projectID" />
+                <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" />
+                <asp:BoundField DataField="ratingID" HeaderText="ratingID" SortExpression="ratingID" />
 
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
