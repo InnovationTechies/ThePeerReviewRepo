@@ -44,7 +44,7 @@ namespace PeerReviewSystem.Models
         public IEnumerable<Review> GetReviews()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Reviews.ToList();
+            return reviewDbContext.Reviews.Include().ToList();
         }
         public IEnumerable<Employee> GetEmployees()
         {
