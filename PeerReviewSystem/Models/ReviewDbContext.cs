@@ -14,11 +14,14 @@ namespace PeerReviewSystem.Models
         public DbSet<Questions> Questions { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<JobRole> Roles { get; set; }
+        //public DbSet<ReviewAll> AllReviews { get; set; }
         //public DbSet<Answers> Answer { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //This bit will create the store procedure automatically.
             modelBuilder.Entity<Review>().MapToStoredProcedures();
+
             base.OnModelCreating(modelBuilder);
         }
     }

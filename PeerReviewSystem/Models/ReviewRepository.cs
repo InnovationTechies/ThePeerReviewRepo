@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -44,8 +46,21 @@ namespace PeerReviewSystem.Models
         public IEnumerable<Review> GetReviews()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Reviews.Include().ToList();
+            return reviewDbContext.Reviews.ToList();
         }
+
+        public IEnumerable<ReviewAll> uspGetReviews()
+        {
+            ReviewDbContext reviewDbContext = new ReviewDbContext();
+
+            IEnumerable<ReviewAll> products =
+             reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select");
+            
+            //reviewDbContext.Reviews.ToList();
+            return products;
+        }
+
+
         public IEnumerable<Employee> GetEmployees()
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();

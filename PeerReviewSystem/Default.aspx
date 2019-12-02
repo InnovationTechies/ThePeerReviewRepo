@@ -129,17 +129,15 @@
         <br />
         <br />
         <br />
-        <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" AllowPaging="True">
+        <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="reviewID" HeaderText="reviewID" SortExpression="reviewID" />
                 <asp:BoundField DataField="ReviewDate" HeaderText="ReviewDate" SortExpression="ReviewDate" />
-                <asp:BoundField DataField="ProjectLeadID" HeaderText="ProjectLeadID" SortExpression="ProjectLeadID" />
-                <asp:BoundField DataField="reviewerID" HeaderText="reviewerID" SortExpression="reviewerID" />
-                <asp:BoundField DataField="revieweeID" HeaderText="revieweeID" SortExpression="revieweeID" />
-                <asp:BoundField DataField="projectID" HeaderText="projectID" SortExpression="projectID" />
-                <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" />
-                <asp:BoundField DataField="ratingID" HeaderText="ratingID" SortExpression="ratingID" />
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                <asp:BoundField DataField="Surname" HeaderText="Surname" SortExpression="Surname" />
+                <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
+                <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
+                <asp:BoundField DataField="rating" HeaderText="rating" SortExpression="rating" />
 
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
@@ -166,7 +164,7 @@
             </SelectParameters>
         </asp:ObjectDataSource>
 
-        <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="GetReviews" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="uspGetReviews" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview"></asp:ObjectDataSource>
         <br />
         <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
         <br />

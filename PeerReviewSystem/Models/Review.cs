@@ -9,7 +9,7 @@ using System.Web;
 namespace PeerReviewSystem.Models
 {
 
-    public class Review
+    public class Review : IReview
     {
         [Key]
         public int reviewID { get; set; }
