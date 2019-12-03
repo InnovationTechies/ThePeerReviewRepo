@@ -55,8 +55,7 @@ namespace PeerReviewSystem.Models
 
             IEnumerable<ReviewAll> products =
              reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select");
-            
-            //reviewDbContext.Reviews.ToList();
+
             return products;
         }
 

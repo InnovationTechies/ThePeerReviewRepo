@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PeerReviewSystem._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
     &nbsp;&nbsp;&nbsp;
 
     <style type="text/css">
@@ -27,6 +26,12 @@
 
     <div class="row">
         <div class="form-group">
+            <h1>Welcome, Submit a review below....
+            </h1>
+
+            <br />
+
+
             <br />
             <asp:Label ID="lblProjectLead" runat="server" Text="Project Lead"></asp:Label>
             <asp:DropDownList ID="drpProjectLead" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control"></asp:DropDownList>
@@ -49,9 +54,9 @@
                 <asp:GridView ID="grdRevQuestion" runat="server" class="table-responsive" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" AutoGenerateColumns="False" DataSourceID="objectQuestions" AllowPaging="True">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" Visible="false"/>
+                        <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" Visible="false" />
                         <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
-                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID"/>
+                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID" />
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:DropDownList ID="drpRating" runat="server" DataSourceID="objectAnswers" DataTextField="rating" DataValueField="rateID" CssClass="form-control">
@@ -60,7 +65,6 @@
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -90,9 +94,7 @@
         </div>
 
         <br />
-        <br />
-        <br />
-<%--        <asp:DetailsView ID="DetailsViewjobRole" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="roleID" DataSourceID="objectJobRole" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
+        <%--        <asp:DetailsView ID="DetailsViewjobRole" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="roleID" DataSourceID="objectJobRole" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
             <EditRowStyle BackColor="#2461BF" />
@@ -107,6 +109,7 @@
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#EFF3FB" />
         </asp:DetailsView>--%>
+        <%--      <br />
         <br />
         <br />
         <br />
@@ -128,15 +131,16 @@
         <br />
         <br />
         <br />
-        <br />
-        <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered">
+        <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" OnSelectedIndexChanged="grdReview_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
+                <asp:BoundField DataField="reviewID" HeaderText="reviewID" SortExpression="reviewID" Visible="false" />
                 <asp:BoundField DataField="ReviewDate" HeaderText="ReviewDate" SortExpression="ReviewDate" />
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="Surname" HeaderText="Surname" SortExpression="Surname" />
                 <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
                 <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
+
                 <asp:BoundField DataField="rating" HeaderText="rating" SortExpression="rating" />
 
             </Columns>
@@ -153,7 +157,7 @@
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
         <br />
-        <br />
+        <br />--%>
         <br />
         <asp:ObjectDataSource ID="objectAnswers" runat="server" SelectMethod="GetAnswerRating" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
         <asp:ObjectDataSource ID="objectEmployee" runat="server" SelectMethod="GetEmployees" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
@@ -167,14 +171,7 @@
         <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="uspGetReviews" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview"></asp:ObjectDataSource>
         <br />
         <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+
 
     </div>
 

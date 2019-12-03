@@ -10,7 +10,7 @@
 namespace PeerReviewSystem {
     
     
-    public partial class _Default {
+    public partial class frmReviews {
         
         /// <summary>
         /// lblProjectLead control.
@@ -85,22 +85,13 @@ namespace PeerReviewSystem {
         protected global::System.Web.UI.WebControls.DropDownList drpReviewee;
         
         /// <summary>
-        /// grdRevQuestion control.
+        /// grdReview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdRevQuestion;
-        
-        /// <summary>
-        /// btnSaveReview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveReview;
+        protected global::System.Web.UI.WebControls.GridView grdReview;
         
         /// <summary>
         /// objectAnswers control.

@@ -172,9 +172,6 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
@@ -251,6 +248,11 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="frmProjects.aspx" />
+    <Content Include="frmQuestions.aspx" />
+    <Content Include="frmReviews.aspx" />
+    <Content Include="frmRoles.aspx" />
+    <Content Include="frmStaff.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -309,9 +311,42 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Control\ReviewsController.cs" />
+    <Compile Include="frmProjects.aspx.cs">
+      <DependentUpon>frmProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmProjects.aspx.designer.cs">
+      <DependentUpon>frmProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuestions.aspx.cs">
+      <DependentUpon>frmQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmQuestions.aspx.designer.cs">
+      <DependentUpon>frmQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmReviews.aspx.cs">
+      <DependentUpon>frmReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmReviews.aspx.designer.cs">
+      <DependentUpon>frmReviews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoles.aspx.cs">
+      <DependentUpon>frmRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmRoles.aspx.designer.cs">
+      <DependentUpon>frmRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaff.aspx.cs">
+      <DependentUpon>frmStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmStaff.aspx.designer.cs">
+      <DependentUpon>frmStaff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -365,13 +400,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Control\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

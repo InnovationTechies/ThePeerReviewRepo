@@ -21,6 +21,11 @@ namespace PeerReviewSystem.Models
         {
             //This bit will create the store procedure automatically.
             modelBuilder.Entity<Review>().MapToStoredProcedures();
+            modelBuilder.Entity<Project>().MapToStoredProcedures();
+            modelBuilder.Entity<Questions>().MapToStoredProcedures();
+            modelBuilder.Entity<Employee>().MapToStoredProcedures();
+            modelBuilder.Entity<JobRole>().MapToStoredProcedures();
+
 
             base.OnModelCreating(modelBuilder);
         }

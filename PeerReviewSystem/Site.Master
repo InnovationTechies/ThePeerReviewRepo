@@ -51,7 +51,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a href="Views/Reviews/Index.cshtml">Reviews</a></li>
+                        <li><a href="frmReviews.aspx">Reviews</a></li>
+                        <li><a href="frmProjects.aspx">Projects</a></li>
+                        <li><a href="frmStaff.aspx">Staff</a></li>
+                        <li><a href="frmQuestions.aspx">Questions</a></li>
+                        <li>Roles</a></li>
                         <li></li>
 
                     </ul>

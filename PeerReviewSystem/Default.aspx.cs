@@ -54,6 +54,11 @@ namespace PeerReviewSystem
 
         }
 
+        protected void grdReview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         //protected void drpReviewee_SelectedIndexChanged(object sender, EventArgs e)
