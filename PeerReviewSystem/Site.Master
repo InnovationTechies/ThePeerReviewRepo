@@ -55,7 +55,7 @@
                         <li><a href="frmProjects.aspx">Projects</a></li>
                         <li><a href="frmStaff.aspx">Staff</a></li>
                         <li><a href="frmQuestions.aspx">Questions</a></li>
-                        <li>Roles</a></li>
+                        <li><a href="frmRoles.aspx">Roles</a></li>
                         <li></li>
 
                     </ul>

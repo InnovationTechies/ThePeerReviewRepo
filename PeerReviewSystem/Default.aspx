@@ -26,12 +26,9 @@
 
     <div class="row">
         <div class="form-group">
-            <h1>Welcome, Submit a review below....
+            <h1>Welcome, submit a review below....
             </h1>
-
             <br />
-
-
             <br />
             <asp:Label ID="lblProjectLead" runat="server" Text="Project Lead"></asp:Label>
             <asp:DropDownList ID="drpProjectLead" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control"></asp:DropDownList>
@@ -82,17 +79,10 @@
 
 
             </div>
-
             <br />
-
-
             <asp:Button ID="btnSaveReview" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="btnSaveReview_Click" />
-
-
             <br />
-
         </div>
-
         <br />
         <%--        <asp:DetailsView ID="DetailsViewjobRole" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="roleID" DataSourceID="objectJobRole" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
             <AlternatingRowStyle BackColor="White" />
@@ -108,8 +98,8 @@
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#EFF3FB" />
-        </asp:DetailsView>--%>
-        <%--      <br />
+        </asp:DetailsView>    
+            <br />
         <br />
         <br />
         <br />
@@ -171,8 +161,6 @@
         <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="uspGetReviews" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview"></asp:ObjectDataSource>
         <br />
         <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
-
-
     </div>
 
 </asp:Content>

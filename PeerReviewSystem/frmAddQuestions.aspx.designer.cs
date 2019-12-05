@@ -10,16 +10,7 @@
 namespace PeerReviewSystem {
     
     
-    public partial class frmRoles {
-        
-        /// <summary>
-        /// grdRoles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdRoles;
+    public partial class frmAddQuestions {
         
         /// <summary>
         /// btnAdd control.
@@ -29,14 +20,5 @@ namespace PeerReviewSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdd;
-        
-        /// <summary>
-        /// objectJobRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource objectJobRole;
     }
 }

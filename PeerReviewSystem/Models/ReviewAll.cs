@@ -21,18 +21,18 @@ namespace PeerReviewSystem.Models
         public string Question { get; set; }
         public string rating { get; set; }
 
-        public Rating Rating { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Project Project { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int projectID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Employee ProjectLead { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int ProjectLeadID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int questionID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Questions Questions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int ratingID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Employee Reviewee { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int revieweeID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Employee Reviewer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int reviewerID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int reviewID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Rating Rating { get; set; }
+        public Project Project { get ; set; }
+        public int projectID { get; set ; }
+        public Employee ProjectLead { get; set; }
+        public int ProjectLeadID { get; set; }
+        public int questionID { get; set; }
+        public Questions Questions { get; set; }
+        public int ratingID { get; set; }
+        public Employee Reviewee { get; set; }
+        public int revieweeID { get; set; }
+        public Employee Reviewer { get; set; }
+        public int reviewerID { get; set; }
+        public int reviewID { get; set; }
     }
 }
