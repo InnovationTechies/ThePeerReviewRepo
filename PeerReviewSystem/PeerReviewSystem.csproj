@@ -251,6 +251,7 @@
     <Content Include="frmAddQuestions.aspx" />
     <Content Include="frmProjects.aspx" />
     <Content Include="frmQuestions.aspx" />
+    <Content Include="frmReports.aspx" />
     <Content Include="frmReviews.aspx" />
     <Content Include="frmRoles.aspx" />
     <Content Include="frmStaff.aspx" />
@@ -334,6 +335,13 @@
     <Compile Include="frmQuestions.aspx.designer.cs">
       <DependentUpon>frmQuestions.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmReports.aspx.cs">
+      <DependentUpon>frmReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmReports.aspx.designer.cs">
+      <DependentUpon>frmReports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmReviews.aspx.cs">
       <DependentUpon>frmReviews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -373,6 +381,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\IQuestions.cs" />
     <Compile Include="Models\IReview.cs" />
     <Compile Include="Models\JobRole.cs" />
     <Compile Include="Models\Project.cs" />

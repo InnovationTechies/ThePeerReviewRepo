@@ -22,6 +22,7 @@ namespace PeerReviewSystem.Models
             reviewDbContext.SaveChanges();
         }
 
+
         public void UpdateReview(Review review)
         {
             Review reviewToUpdate= reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
@@ -33,6 +34,12 @@ namespace PeerReviewSystem.Models
             reviewToUpdate.questionID = review.questionID;
             reviewToUpdate.ratingID = review.ratingID;
 
+            reviewDbContext.SaveChanges();
+        }
+
+        internal void InsertQuestion(Questions questions)
+        {
+            reviewDbContext.Questions.Add(questions);
             reviewDbContext.SaveChanges();
         }
 
@@ -64,6 +71,12 @@ namespace PeerReviewSystem.Models
         {
             ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Employees.ToList();
+        }
+
+        public IEnumerable<Employee> GetEmployees(int RoleID)
+        {
+            ReviewDbContext reviewDbContext = new ReviewDbContext();
+            return reviewDbContext.Employees.Where(x => x.RoleID == RoleID).ToList();
         }
 
 

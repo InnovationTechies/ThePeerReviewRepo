@@ -8,7 +8,7 @@ using System.Web;
 namespace PeerReviewSystem.Models
 {
 
-    public class Questions
+    public class Questions : IQuestions
     {
         [Key]
         public int questionID { get; set; }

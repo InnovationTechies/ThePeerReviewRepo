@@ -27,8 +27,12 @@
 
     <div class="row">
         <div class="form-group">
-            <h1>Projects
+            <h1>Staff Members
             </h1>
+
+            <asp:Label ID="lblRole" runat="server" Text="Role"></asp:Label>
+            <asp:DropDownList ID="drpRole" runat="server" DataSourceID="objectJobRole" DataTextField="Role" DataValueField="roleID" CssClass="form-control" AutoPostBack="true"></asp:DropDownList>
+            <br />
 
             <br />
             <div class="rounded_corners" style="width: 100%">
@@ -36,10 +40,10 @@
                     <AlternatingRowStyle BackColor="White" />
 
                     <Columns>
-                        <asp:BoundField DataField="empID" HeaderText="empID" SortExpression="empID"></asp:BoundField>
+                        <asp:BoundField DataField="empID" HeaderText="empID" SortExpression="empID" Visible="false"></asp:BoundField>
                         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"></asp:BoundField>
                         <asp:BoundField DataField="Surname" HeaderText="Surname" SortExpression="Surname"></asp:BoundField>
-                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID"></asp:BoundField>
+                        <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID" Visible="false"></asp:BoundField>
                     </Columns>
 
                     <EditRowStyle BackColor="#2461BF" />
@@ -58,11 +62,16 @@
 
         </div>
     </div>
-     <br />
+    <br />
     <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-primary" />
 
     <br />
-    
-        <asp:ObjectDataSource ID="objectEmployee" runat="server" SelectMethod="GetEmployees" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="objectEmployee" runat="server" SelectMethod="GetEmployees" TypeName="PeerReviewSystem.Models.ReviewRepository">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="drpRole" PropertyName="SelectedValue" Name="RoleID" Type="Int32"></asp:ControlParameter>
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 </asp:Content>

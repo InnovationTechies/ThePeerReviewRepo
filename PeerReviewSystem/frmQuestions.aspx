@@ -26,7 +26,7 @@
 
     <div class="row">
         <div class="form-group">
-            <h1>Questions
+            <h1>Profiles
             </h1>
 
             <asp:Label ID="lblRole" runat="server" Text="Role"></asp:Label>
@@ -63,7 +63,7 @@
     </div>
 
     <br />
-    <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-primary" />
+    <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-primary" OnClick="btnAdd_Click" />
     <br />
 
     <br />

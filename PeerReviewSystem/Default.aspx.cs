@@ -17,7 +17,7 @@ namespace PeerReviewSystem
         }
 
         /// <summary>
-        /// Save review by reviewwer into review table
+        /// Save Review by Reviewwer into review table db
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -60,13 +60,5 @@ namespace PeerReviewSystem
         }
 
 
-
-        //protected void drpReviewee_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    role = drpReviewee.SelectedItem.Value;
-        //    ReviewRepository reviewRepository = new ReviewRepository();
-        //    grdViewQuestions.DataSource = reviewRepository.GetQuestions();
-
-        //}
     }
 }

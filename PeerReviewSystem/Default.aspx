@@ -26,7 +26,7 @@
 
     <div class="row">
         <div class="form-group">
-            <h1>Welcome, submit a review below....
+            <h1>Review
             </h1>
             <br />
             <br />
@@ -84,7 +84,24 @@
             <br />
         </div>
         <br />
-        <%--        <asp:DetailsView ID="DetailsViewjobRole" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="roleID" DataSourceID="objectJobRole" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
+       
+        <br />
+        <asp:ObjectDataSource ID="objectAnswers" runat="server" SelectMethod="GetAnswerRating" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="objectEmployee" runat="server" SelectMethod="GetEmployees" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="objectProject" runat="server" SelectMethod="GetProjects" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="objectQuestions" runat="server" SelectMethod="GetQuestionsByEmployee" TypeName="PeerReviewSystem.Models.ReviewRepository">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="drpReviewee" PropertyName="SelectedValue" Name="RoleID" Type="Int32"></asp:ControlParameter>
+            </SelectParameters>
+        </asp:ObjectDataSource>
+
+        <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="uspGetReviews" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview"></asp:ObjectDataSource>
+        <br />
+        <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
+    </div>
+
+</asp:Content>
+ <%--        <asp:DetailsView ID="DetailsViewjobRole" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="roleID" DataSourceID="objectJobRole" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
             <EditRowStyle BackColor="#2461BF" />
@@ -148,19 +165,3 @@
         </asp:GridView>
         <br />
         <br />--%>
-        <br />
-        <asp:ObjectDataSource ID="objectAnswers" runat="server" SelectMethod="GetAnswerRating" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
-        <asp:ObjectDataSource ID="objectEmployee" runat="server" SelectMethod="GetEmployees" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
-        <asp:ObjectDataSource ID="objectProject" runat="server" SelectMethod="GetProjects" TypeName="PeerReviewSystem.Models.ReviewRepository"></asp:ObjectDataSource>
-        <asp:ObjectDataSource ID="objectQuestions" runat="server" SelectMethod="GetQuestionsByEmployee" TypeName="PeerReviewSystem.Models.ReviewRepository">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="drpReviewee" PropertyName="SelectedValue" Name="RoleID" Type="Int32"></asp:ControlParameter>
-            </SelectParameters>
-        </asp:ObjectDataSource>
-
-        <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="uspGetReviews" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview"></asp:ObjectDataSource>
-        <br />
-        <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
-    </div>
-
-</asp:Content>

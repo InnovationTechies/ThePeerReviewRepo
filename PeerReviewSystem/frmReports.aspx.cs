@@ -7,18 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace PeerReviewSystem
 {
-    public partial class frmQuestions : System.Web.UI.Page
+    public partial class frmReports : System.Web.UI.Page
     {
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/frmAddQuestions.aspx");
         }
     }
 }
