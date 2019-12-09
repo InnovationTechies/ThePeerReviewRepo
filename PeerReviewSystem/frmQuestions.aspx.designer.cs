@@ -31,13 +31,13 @@ namespace PeerReviewSystem {
         protected global::System.Web.UI.WebControls.DropDownList drpRole;
         
         /// <summary>
-        /// grdReview control.
+        /// grdQuestions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdReview;
+        protected global::System.Web.UI.WebControls.GridView grdQuestions;
         
         /// <summary>
         /// btnAdd control.

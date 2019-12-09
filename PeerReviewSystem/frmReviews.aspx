@@ -27,7 +27,7 @@
     <div class="row">
         <div class="form-group">
 
-            <br />
+          <%--  <br />
             <asp:Label ID="lblProjectLead" runat="server" Text="Project Lead"></asp:Label>
             <asp:DropDownList ID="drpProjectLead" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="empID" CssClass="form-control"></asp:DropDownList>
 
@@ -37,20 +37,18 @@
 
             <br />
             <asp:Label ID="lblProject" runat="server" Text="Project"></asp:Label>
-            <asp:DropDownList ID="drpProject" runat="server" DataSourceID="objectProject" DataTextField="Name" DataValueField="projectID" CssClass="form-control"></asp:DropDownList>
+            <asp:DropDownList ID="drpProject" runat="server" DataSourceID="objectProject" DataTextField="Name" DataValueField="projectID" CssClass="form-control"></asp:DropDownList>--%>
 
             <br />
-            <asp:Label ID="lblReviewee" runat="server" Text="Reviewing"></asp:Label>
+            <asp:Label ID="lblStaff" runat="server" Text="Staff"></asp:Label>
             <asp:DropDownList ID="drpReviewee" runat="server" DataSourceID="objectEmployee" DataTextField="Name" DataValueField="RoleID" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
             <br />
 
             <hr />
-
-
             <br />
             <br />
              <div class="rounded_corners" style="width: 100%">
-            <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered">
+                 <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectReview" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" AllowPaging="True">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="reviewID" HeaderText="reviewID" SortExpression="reviewID" Visible="false" />
@@ -89,7 +87,11 @@
                 </SelectParameters>
             </asp:ObjectDataSource>
 
-            <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="uspGetReviews" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview"></asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="objectReview" runat="server" SelectMethod="uspGetReviewsEmployee" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Review" DeleteMethod="DeleteReview" InsertMethod="InsertReview" UpdateMethod="UpdateReview">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="drpReviewee" PropertyName="SelectedValue" Name="employee" Type="Object"></asp:ControlParameter>
+                </SelectParameters>
+            </asp:ObjectDataSource>
             <br />
             <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
    

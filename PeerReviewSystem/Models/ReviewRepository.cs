@@ -37,11 +37,31 @@ namespace PeerReviewSystem.Models
             reviewDbContext.SaveChanges();
         }
 
+
+        public void UpdateQuestion(Questions questions)
+        {
+            Questions questionsToUpdate = reviewDbContext.Questions.FirstOrDefault(x => x.questionID == questions.questionID);
+            questionsToUpdate.Question = questions.Question;
+            questionsToUpdate.Role = questions.Role;
+            questionsToUpdate.RoleID = questions.RoleID;
+            
+            reviewDbContext.SaveChanges();
+        }
+        public int DeleteQuestion(Questions questions)
+        {
+            Questions questionsToDelete = reviewDbContext.Questions.FirstOrDefault(x => x.questionID == questions.questionID);
+            reviewDbContext.Questions.Remove(questionsToDelete);
+
+            return reviewDbContext.SaveChanges();
+        }
+
         internal void InsertQuestion(Questions questions)
         {
             reviewDbContext.Questions.Add(questions);
             reviewDbContext.SaveChanges();
         }
+
+
 
         public void DeleteReview(Review review)
         {
@@ -49,6 +69,8 @@ namespace PeerReviewSystem.Models
             reviewDbContext.Reviews.Remove(reviewToDelete);
             reviewDbContext.SaveChanges();
         }
+
+
 
         public IEnumerable<Review> GetReviews()
         {
@@ -63,7 +85,18 @@ namespace PeerReviewSystem.Models
             IEnumerable<ReviewAll> products =
              reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select");
 
-            return products;
+            return products.ToList();
+
+        }
+        public IEnumerable<ReviewAll> uspGetReviewsEmployee(Employee employee)
+        {
+            ReviewDbContext reviewDbContext = new ReviewDbContext();
+
+            IEnumerable<ReviewAll> products =
+             reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select_By_EmpID", employee.empID);
+
+            return products.ToList();
+
         }
 
 

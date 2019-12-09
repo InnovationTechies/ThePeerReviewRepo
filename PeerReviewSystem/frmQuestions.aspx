@@ -35,26 +35,27 @@
             <br />
             <hr />
             <div class="rounded_corners" style="width: 100%">
-            <asp:GridView ID="grdReview" runat="server" AutoGenerateColumns="False" DataSourceID="objectQuestions" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered">
+                <asp:GridView ID="grdQuestions" runat="server" AutoGenerateColumns="False" DataSourceID="objectQuestions" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" AllowPaging="True" DataKeyNames="questionID">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
+                    <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
                     <asp:BoundField DataField="questionID" HeaderText="questionID" SortExpression="questionID" Visible="false" />
                     <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
                     <asp:BoundField DataField="RoleID" HeaderText="RoleID" SortExpression="RoleID" Visible="false" />
 
                 </Columns>
-                <EditRowStyle BackColor="#2461BF" />
+                    <EditRowStyle BackColor="#2461BF" />
 
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-            </asp:GridView>
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                </asp:GridView>
             </div>
 
             <br />
@@ -67,9 +68,11 @@
     <br />
 
     <br />
-    <asp:ObjectDataSource ID="objectQuestions" runat="server" SelectMethod="GetQuestionsByEmployee" TypeName="PeerReviewSystem.Models.ReviewRepository">
+    <asp:ObjectDataSource ID="objectQuestions" runat="server" SelectMethod="GetQuestionsByEmployee" TypeName="PeerReviewSystem.Models.ReviewRepository" DataObjectTypeName="PeerReviewSystem.Models.Questions" UpdateMethod="UpdateQuestion" DeleteMethod="DeleteQuestion">
         <SelectParameters>
             <asp:ControlParameter ControlID="drpRole" PropertyName="SelectedValue" Name="RoleID" Type="Int32"></asp:ControlParameter>
+
+
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
