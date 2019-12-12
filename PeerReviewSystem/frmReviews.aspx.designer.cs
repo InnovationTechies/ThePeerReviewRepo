@@ -40,15 +40,6 @@ namespace PeerReviewSystem {
         protected global::System.Web.UI.WebControls.GridView grdReview;
         
         /// <summary>
-        /// objectAnswers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource objectAnswers;
-        
-        /// <summary>
         /// objectEmployee control.
         /// </summary>
         /// <remarks>
@@ -58,24 +49,6 @@ namespace PeerReviewSystem {
         protected global::System.Web.UI.WebControls.ObjectDataSource objectEmployee;
         
         /// <summary>
-        /// objectProject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource objectProject;
-        
-        /// <summary>
-        /// objectQuestions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource objectQuestions;
-        
-        /// <summary>
         /// objectReview control.
         /// </summary>
         /// <remarks>
@@ -83,14 +56,5 @@ namespace PeerReviewSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource objectReview;
-        
-        /// <summary>
-        /// objectJobRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource objectJobRole;
     }
 }

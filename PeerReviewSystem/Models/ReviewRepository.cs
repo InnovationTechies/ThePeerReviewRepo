@@ -70,45 +70,35 @@ namespace PeerReviewSystem.Models
             reviewDbContext.SaveChanges();
         }
 
-
-
         public IEnumerable<Review> GetReviews()
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Reviews.ToList();
         }
 
         public IEnumerable<ReviewAll> uspGetReviews()
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
-
-            IEnumerable<ReviewAll> products =
-             reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select");
+            IEnumerable<ReviewAll> products = reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select");
 
             return products.ToList();
 
         }
-        public IEnumerable<ReviewAll> uspGetReviewsEmployee(Employee employee)
+        public IEnumerable<ReviewAll> uspGetReviewsEmployee(int empID)
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
+            int theEmpID = empID;
 
-            IEnumerable<ReviewAll> products =
-             reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select_By_EmpID", employee.empID);
-
+            IEnumerable<ReviewAll> products = 
+                reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select_By_EmpID", parameters: theEmpID);
             return products.ToList();
-
         }
 
 
         public IEnumerable<Employee> GetEmployees()
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Employees.ToList();
         }
 
         public IEnumerable<Employee> GetEmployees(int RoleID)
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Employees.Where(x => x.RoleID == RoleID).ToList();
         }
 
@@ -120,18 +110,15 @@ namespace PeerReviewSystem.Models
         /// <returns></returns>
         public IEnumerable<Questions> GetQuestionsByEmployee(int RoleID)
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
-            return reviewDbContext.Questions.Where(x=> x.RoleID== RoleID || x.RoleID==5 ).ToList();
+            return reviewDbContext.Questions.Where(x=> x.RoleID== RoleID || x.RoleID==5).ToList();
         }
 
         public IEnumerable<Questions> GetQuestions()
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Questions.ToList();
         }
         public IEnumerable<Project> GetProjects()
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Projects.ToList();
         }
 
@@ -151,12 +138,11 @@ namespace PeerReviewSystem.Models
 
         public IEnumerable<JobRole> GetJobRoles()
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Roles.ToList();
         }
+
         public IEnumerable<Rating> GetAnswerRating()
         {
-            ReviewDbContext reviewDbContext = new ReviewDbContext();
             return reviewDbContext.Responses.ToList();
         }
 
