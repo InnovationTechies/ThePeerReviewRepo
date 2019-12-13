@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmRoles.aspx.cs" Inherits="PeerReviewSystem.frmRoles" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmAddRole.aspx.cs" Inherits="PeerReviewSystem.frmAddRole" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    &nbsp;&nbsp;&nbsp;
+
+     &nbsp;&nbsp;&nbsp;
 
     <style type="text/css">
         .rounded_corners {
@@ -24,16 +24,26 @@
             }
     </style>
 
+    <br />
     <div class="row">
         <div class="form-group">
-            <h1>Roles
+            <h1>Add Role
             </h1>
 
+            <asp:Label ID="lblRole" runat="server" Text="Role"></asp:Label>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator">
+                <asp:TextBox ID="txtRole" runat="server" CssClass="form-control" Width="100%" ValidateRequestMode="Enabled"></asp:TextBox>
+            </asp:RequiredFieldValidator>
             <br />
+              <br />
+            <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" OnClick="btnSave_Click" />
+            <br />
+              <br /> 
             <div class="rounded_corners" style="width: 100%">
-                <asp:GridView ID="grdRoles" runat="server" AutoGenerateColumns="False" DataSourceID="objectJobRole" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered">
+                <asp:GridView ID="grdRoleAdd" runat="server" AutoGenerateColumns="False" DataSourceID="objectJobRole" CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="table table-hover table-bordered" AllowPaging="True" DataKeyNames="roleID">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
+                        <asp:CommandField ShowEditButton="True"></asp:CommandField>
                         <asp:BoundField DataField="roleID" HeaderText="roleID" SortExpression="roleID"></asp:BoundField>
                         <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role"></asp:BoundField>
                     </Columns>
@@ -52,11 +62,11 @@
                 </asp:GridView>
             </div>
 
+
+
+
         </div>
     </div>
-     <br />
-    <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-primary" OnClick="btnAdd_Click" />
-    
-    <br />
     <asp:ObjectDataSource ID="objectJobRole" runat="server" DataObjectTypeName="PeerReviewSystem.Models.JobRole" InsertMethod="InsertRole" SelectMethod="GetJobRoles" TypeName="PeerReviewSystem.Models.ReviewRepository" UpdateMethod="UpdatetRole"></asp:ObjectDataSource>
+
 </asp:Content>

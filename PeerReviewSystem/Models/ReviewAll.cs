@@ -21,7 +21,7 @@ namespace PeerReviewSystem.Models
         public string Question { get; set; }
         public string rating { get; set; }
 
-        public Rating Rating { get; set; }
+        public Ratings Rating { get; set; }
         public Project Project { get ; set; }
         public int projectID { get; set ; }
         public Employee ProjectLead { get; set; }

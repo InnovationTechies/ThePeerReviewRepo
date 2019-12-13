@@ -1,8 +1,10 @@
-﻿using System;
+﻿using PeerReviewSystemV2.Controllers;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -22,7 +24,6 @@ namespace PeerReviewSystem.Models
             reviewDbContext.SaveChanges();
         }
 
-
         public void UpdateReview(Review review)
         {
             Review reviewToUpdate= reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
@@ -37,7 +38,6 @@ namespace PeerReviewSystem.Models
             reviewDbContext.SaveChanges();
         }
 
-
         public void UpdateQuestion(Questions questions)
         {
             Questions questionsToUpdate = reviewDbContext.Questions.FirstOrDefault(x => x.questionID == questions.questionID);
@@ -47,6 +47,7 @@ namespace PeerReviewSystem.Models
             
             reviewDbContext.SaveChanges();
         }
+
         public int DeleteQuestion(Questions questions)
         {
             Questions questionsToDelete = reviewDbContext.Questions.FirstOrDefault(x => x.questionID == questions.questionID);
@@ -61,11 +62,9 @@ namespace PeerReviewSystem.Models
             reviewDbContext.SaveChanges();
         }
 
-
-
         public void DeleteReview(Review review)
         {
-            Review reviewToDelete = reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID);
+            Review reviewToDelete = reviewDbContext.Reviews.FirstOrDefault(x => x.reviewID == review.reviewID) ;
             reviewDbContext.Reviews.Remove(reviewToDelete);
             reviewDbContext.SaveChanges();
         }
@@ -82,15 +81,21 @@ namespace PeerReviewSystem.Models
             return products.ToList();
 
         }
-        public IEnumerable<ReviewAll> uspGetReviewsEmployee(int empID)
+
+        public IEnumerable<ReviewAll> UspGetReviewsEmployee(int empID)
         {
-            int theEmpID = empID;
+            IEnumerable<ReviewAll> result;
+            using (var context = new ReviewDbContext())
+            {
+                var clientIdParameter = new SqlParameter("@empID", empID);
 
-            IEnumerable<ReviewAll> products = 
-                reviewDbContext.Database.SqlQuery<ReviewAll>("dbo.Review_Select_By_EmpID", parameters: theEmpID);
-            return products.ToList();
+                result = context.Database
+                    .SqlQuery<ReviewAll>("Review_Select_By_EmpID @empID", clientIdParameter)
+                    .ToList();
+            }
+            return result;
+
         }
-
 
         public IEnumerable<Employee> GetEmployees()
         {
@@ -117,6 +122,7 @@ namespace PeerReviewSystem.Models
         {
             return reviewDbContext.Questions.ToList();
         }
+
         public IEnumerable<Project> GetProjects()
         {
             return reviewDbContext.Projects.ToList();
@@ -135,17 +141,15 @@ namespace PeerReviewSystem.Models
             reviewDbContext.SaveChanges();
         }
 
-
         public IEnumerable<JobRole> GetJobRoles()
         {
             return reviewDbContext.Roles.ToList();
         }
 
-        public IEnumerable<Rating> GetAnswerRating()
+        public IEnumerable<Ratings> GetAnswerRating()
         {
             return reviewDbContext.Responses.ToList();
         }
-
 
     }
 }

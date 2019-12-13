@@ -249,6 +249,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="frmAddQuestions.aspx" />
+    <Content Include="frmAddRole.aspx" />
     <Content Include="frmProjects.aspx" />
     <Content Include="frmQuestions.aspx" />
     <Content Include="frmReports.aspx" />
@@ -320,6 +321,13 @@
     </Compile>
     <Compile Include="frmAddQuestions.aspx.designer.cs">
       <DependentUpon>frmAddQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddRole.aspx.cs">
+      <DependentUpon>frmAddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmAddRole.aspx.designer.cs">
+      <DependentUpon>frmAddRole.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmProjects.aspx.cs">
       <DependentUpon>frmProjects.aspx</DependentUpon>
@@ -432,6 +440,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PeerReviewSystemV2\PeerReviewSystemV2.csproj">
+      <Project>{8BBD8E1B-1C91-4733-9D84-2177D1F08F20}</Project>
+      <Name>PeerReviewSystemV2</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -13,5 +13,11 @@ namespace PeerReviewSystem
         {
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmAddRole.aspx");
+
+        }
     }
 }

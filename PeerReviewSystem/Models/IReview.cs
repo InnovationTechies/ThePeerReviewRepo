@@ -10,7 +10,7 @@ namespace PeerReviewSystem.Models
         int ProjectLeadID { get; set; }
         int questionID { get; set; }
         Questions Questions { get; set; }
-        Rating Rating { get; set; }
+        Ratings Rating { get; set; }
         int ratingID { get; set; }
         DateTime ReviewDate { get; set; }
         Employee Reviewee { get; set; }

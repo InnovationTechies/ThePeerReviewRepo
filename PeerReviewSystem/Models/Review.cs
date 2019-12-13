@@ -34,7 +34,7 @@ namespace PeerReviewSystem.Models
         public virtual Questions Questions { get; set; }
 
         public int ratingID { get; set; }
-        public virtual Rating Rating { get; set; }
+        public virtual Ratings Rating { get; set; }
 
     }
 }
