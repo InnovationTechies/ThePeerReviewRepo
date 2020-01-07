@@ -31,11 +31,11 @@
             </h1>
 
             <asp:Label ID="lblRole" runat="server" Text="Role"></asp:Label>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Field is required" ControlToValidate="txtRole">
                 <asp:TextBox ID="txtRole" runat="server" CssClass="form-control" Width="100%" ValidateRequestMode="Enabled"></asp:TextBox>
             </asp:RequiredFieldValidator>
             <br />
-              <br />
+            <br />
             <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" OnClick="btnSave_Click" />
             <br />
               <br /> 
