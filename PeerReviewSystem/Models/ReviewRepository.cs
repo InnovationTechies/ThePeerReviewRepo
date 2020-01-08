@@ -97,7 +97,7 @@ namespace PeerReviewSystem.Models
 
         }
 
-        public IEnumerable<Employee> GetEmployees()
+        public IList<Employee> GetEmployees()
         {
             return reviewDbContext.Employees.ToList();
         }
