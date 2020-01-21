@@ -2,7 +2,7 @@
 
 namespace PeerReviewSystem.Models
 {
-    public interface IReview
+     interface IReview
     {
         Project Project { get; set; }
         int projectID { get; set; }

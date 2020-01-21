@@ -1,6 +1,6 @@
 ﻿namespace PeerReviewSystem.Models
 {
-    public interface IQuestions
+     interface IQuestions
     {
         string Question { get; set; }
         int questionID { get; set; }

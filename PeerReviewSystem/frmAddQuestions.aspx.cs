@@ -22,8 +22,7 @@ namespace PeerReviewSystem
             Questions questions = new Questions();
 
             questions.Question = txtQuestion.Text;
-            questions.RoleID = int.Parse(drpRole.SelectedValue);
-
+            questions.RoleID =Convert.ToInt32(drpRole.SelectedValue);
             reviewRepository.InsertQuestion(questions);
 
             Response.Redirect(Request.RawUrl);

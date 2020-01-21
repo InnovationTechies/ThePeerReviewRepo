@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 //using MySql.Data.Entity;
-using MySql.Data.EntityFramework;
+//using MySql.Data.EntityFramework;
 
 namespace PeerReviewSystem.Models
 {
-    [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    public class ReviewDbContext: DbContext
+    //[DbConfigurationType(typeof(MySqlEFConfiguration))]
+    public class ReviewDbContext : DbContext
     {
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Project> Projects { get; set; }
@@ -17,8 +17,7 @@ namespace PeerReviewSystem.Models
         public DbSet<Questions> Questions { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<JobRole> Roles { get; set; }
-        //public DbSet<ReviewAll> AllReviews { get; set; }
-        //public DbSet<Answers> Answer { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

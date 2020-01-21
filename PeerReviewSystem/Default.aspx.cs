@@ -33,13 +33,13 @@ namespace PeerReviewSystem
                     //Your other code
                     review = new Review()
                     {
-                        projectID = int.Parse( drpProject.SelectedValue),
-                        ProjectLeadID = int.Parse( drpProjectLead.SelectedValue),
+                        projectID = Convert.ToInt32(drpProject.SelectedValue),
+                        ProjectLeadID =Convert.ToInt32( drpProjectLead.SelectedValue),
                         ReviewDate = DateTime.Today,
-                        reviewerID = int.Parse(dropReviewer.SelectedValue),
-                        revieweeID = int.Parse(drpReviewee.SelectedValue),
-                        questionID = int.Parse(row.Cells[2].Text),
-                        ratingID= int.Parse(dropDown.SelectedValue)
+                        reviewerID = Convert.ToInt32(dropReviewer.SelectedValue),
+                        revieweeID = Convert.ToInt32(drpReviewee.SelectedValue),
+                        questionID = Convert.ToInt32(row.Cells[2].Text),
+                        ratingID= Convert.ToInt32(dropDown.SelectedValue)
                     };
 
                     repository.InsertReview(review);

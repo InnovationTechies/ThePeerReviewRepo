@@ -7,7 +7,7 @@ using System.Web;
 
 namespace PeerReviewSystem.Models
 {
-    public class Employee
+    public class Employee : IEmployee
     {
         [Key]
         public int empID { get; set; }
